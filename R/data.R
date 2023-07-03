@@ -1,4 +1,4 @@
-#' Example CV ata
+#' Example CV data
 #'
 #' A list containing example CV data in the format expected by the `qcvutils`
 #' package.
