@@ -1,0 +1,11 @@
+education:
+- title: Ph.D. in Example-ology
+  start: 20XX
+  end: 20YY
+  details:
+  - University of Example,
+  - "Advisor: Dr. Example"
+- title: B.S. in Example-ology
+  start: 20xx
+  end: 20yy
+  details: Example University

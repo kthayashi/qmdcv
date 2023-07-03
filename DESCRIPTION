@@ -9,5 +9,8 @@ Description: Utility functions for creating an HTML curriculum vitae with
     open source project.
 License: MIT + file LICENSE
 Encoding: UTF-8
+LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
+Depends: 
+    R (>= 2.10)
