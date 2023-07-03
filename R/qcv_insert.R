@@ -24,12 +24,12 @@ qcv_insert <- function(data) {
     # Generate output text
     cat(":::::: columns\n")
       cat(":::{.column style='width:80%; text-align:left;'}\n")
-        cat(paste0("**", d$title, "**\n"))
-        cat(paste0(d$details, "\n", collapse = ""))
-        # cat(glue::glue_data(d, "{details}  \n"))
+        cat(paste0("**", d$title, "**  \n"))
+        cat(paste0(d$details, "  \n", collapse = ""))
       cat(":::\n")
-    cat(":::{.column style='width:20%; text-align:right;'}\n")
-    cat(":::\n")
+      cat(":::{.column style='width:20%; text-align:right;'}\n")
+        cat(paste0(d$start, " - ", d$end, "\n"))
+      cat(":::\n")
     cat("::::::\n")
     cat("\n")
   }
