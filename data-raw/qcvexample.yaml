@@ -3,9 +3,20 @@ education:
   start: 20XX
   end: 20YY
   details:
-  - University of Example,
+  - University of Example
   - "Advisor: Dr. Example"
 - title: B.S. in Example-ology
   start: 20xx
   end: 20yy
   details: Example University
+grants:
+- title: This Grant
+  start: 20AA
+  end: Present
+  details: Name of funded project
+  notes: This is a more detailed description about this grant/project.
+- title: That Grant
+  start: 20BB
+  end: 20CC
+  details: Name of funded project
+  notes: This is a more detailed description about this grant/project.

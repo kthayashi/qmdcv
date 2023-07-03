@@ -22,10 +22,13 @@ qcv_insert <- function(data) {
     # Get focal element
     d <- data[[i]]
     # Generate output text
-    cat(":::::: columns\n")
+    cat("::::::{.columns}\n")
       cat(":::{.column style='width:80%; text-align:left;'}\n")
         cat(paste0("**", d$title, "**  \n"))
         cat(paste0(d$details, "  \n", collapse = ""))
+        if ("notes" %in% names(d)) {
+          cat("[", paste0(d$notes, "]{style='color:gray; font-size:0.8em; vertical-align:top;'}  \n", collapse = ""))
+        }
       cat(":::\n")
       cat(":::{.column style='width:20%; text-align:right;'}\n")
         cat(paste0(d$start, " - ", d$end, "\n"))
