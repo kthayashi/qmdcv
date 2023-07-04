@@ -31,7 +31,7 @@ qcv_insert <- function(data) {
           cat(paste0(d$details, "  \n", collapse = ""))
         }
         if ("notes" %in% names(d)) {
-          cat("[", paste0(d$notes, "]{style='color:gray; font-size:0.8em; vertical-align:top;'}  \n", collapse = ""))
+          cat("[", paste0(d$notes, "]{style='display:flex; color:gray; font-size:0.8em; margin;'}  \n", collapse = ""))
         }
       cat(":::\n")
       cat(":::{.column style='width:20%; text-align:right;'}\n")
