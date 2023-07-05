@@ -23,9 +23,7 @@ grants:
 publications:
   articles:
     - title: Title of your awesome publication
-      authors:
-        - Person A
-        - Person B
+      authors: Person A, Person B
       year: 20XX
       publication: Journal of Example-ology
       volume: vol

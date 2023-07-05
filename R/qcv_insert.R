@@ -79,7 +79,11 @@ qcv_insert_pubs <- function(data) {
     cat(paste0(
       ":::{}\n",
       rev(1:length(data))[i], ". ",
-      paste0(d$authors, collapse = ", "), ". ",
+      if (length(d$authors) > 1) {
+        paste0(paste0(d$authors, collapse = ", "), ". ")
+      } else {
+        paste0(d$authors, ". ")
+      },
       paste0("(", d$year, "). "),
       d$title, ". ",
       paste0("*", d$publication, "*, "),
