@@ -1,22 +1,42 @@
 education:
-- title: Ph.D. in Example-ology
-  start: 20XX
-  end: 20YY
-  details:
-  - University of Example
-  - "Advisor: Dr. Example"
-- title: B.S. in Example-ology
-  start: 20xx
-  end: 20yy
-  details: Example University
+  - title: Ph.D. in Example-ology
+    start: 20XX
+    end: 20YY
+    details:
+      - University of Example
+      - "Advisor: Dr. Example"
+  - title: B.S. in Example-ology
+    start: 20xx
+    end: 20yy
+    details: Example University
 grants:
-- title: This Grant
-  start: 20AA
-  end: Present
-  details: Name of funded project
-  notes: This is a more detailed description about this grant/project.
-- title: That Grant
-  start: 20BB
-  end: 20CC
-  details: Name of funded project
-  notes: This is a more detailed description about this grant/project.
+  - title: This Grant
+    start: 20AA
+    end: Present
+    details: Name of funded project
+    notes: This is a more detailed description about this grant/project.
+  - title: That Grant
+    start: 20BB
+    end: 20CC
+    details: Name of funded project
+    notes: This is a more detailed description about this grant/project.
+publications:
+  articles:
+    - title: Title of your awesome publication
+      authors:
+        - Person A
+        - Person B
+      year: 20XX
+      publication: Journal of Example-ology
+      volume: vol
+      pages: pp-pp
+      doi: DOI
+    - title: Title of your awesome publication
+      authors:
+        - Person A
+        - Person B
+      year: 20XX
+      publication: Journal of Example-ology
+      volume: vol
+      pages: pp-pp
+      doi: DOI

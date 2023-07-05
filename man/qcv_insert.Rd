@@ -2,7 +2,7 @@
 % Please edit documentation in R/qcv_insert.R
 \name{qcv_insert}
 \alias{qcv_insert}
-\title{Insert a CV entry}
+\title{Insert entries into your CV}
 \usage{
 qcv_insert(data)
 }
@@ -11,17 +11,20 @@ qcv_insert(data)
 \code{data(qcvexample)} for an example.}
 }
 \value{
-Literal markdown text and HTML code to be rendered with Quarto
+Markdown text to be rendered with Quarto.
 }
 \description{
 \code{qcv_insert} converts a structured list (typically imported
-from a YAML file) into literal markdown text and HTML code to be rendered
-with Quarto. Note that the code chunk in which this function is run should
-be given the \code{output: asis} option.
+from a YAML file) into Quarto-style markdown text (including HTML/CSS
+where necessary) to be rendered as a CV section. Note that the code chunk in
+which this function is run should be given the \code{output: asis} option.
 }
 \examples{
 data(qcvexample)
 edu <- qcvexample$education
 qcv_insert(edu)
 
+}
+\seealso{
+\url{qcv_insert_pubs}
 }
