@@ -77,7 +77,7 @@ qcv_insert_pubs <- function(data) {
     d <- data[[i]]
     # Generate output text
     cat(paste0(
-      "<div>\n",
+      ":::{}\n",
       rev(1:length(data))[i], ". ",
       paste0(d$authors, collapse = ", "), ". ",
       paste0("(", d$year, "). "),
@@ -86,11 +86,11 @@ qcv_insert_pubs <- function(data) {
       d$volume, ", ",
       d$pages, ". ",
       if ("doi" %in% names(d)) {
-        paste0("DOI: [", d$doi, "](", d$doi, ")  \n")
+        paste0("[https://doi.org/", d$doi, "](https://doi.org/", d$doi, ")  \n")
       } else {
         "  \n"
       },
-      "</div>\n",
+      ":::\n",
       "\n"
     ))
   }

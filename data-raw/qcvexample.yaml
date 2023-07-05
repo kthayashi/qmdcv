@@ -30,7 +30,7 @@ publications:
       publication: Journal of Example-ology
       volume: vol
       pages: pp-pp
-      doi: DOI
+      doi: xxxxx
     - title: Title of your awesome publication
       authors:
         - Person A
@@ -39,4 +39,4 @@ publications:
       publication: Journal of Example-ology
       volume: vol
       pages: pp-pp
-      doi: DOI
+      doi: xxxxx
