@@ -38,3 +38,12 @@ publications:
       volume: vol
       pages: pp-pp
       doi: xxxxx
+talks:
+  - title: Title of your awesome talk
+    authors: Person A
+    date: Month Day, 20XX
+    context: Conference of Example-ology, Location
+  - title: Title of your awesome talk!
+    authors: Person A
+    date: Month Day, 20XX
+    context: Conference of Example-ology, Location

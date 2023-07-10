@@ -15,7 +15,7 @@
 #' edu <- qcvexample$education
 #' qcv_insert(edu)
 #'
-#' @seealso [qcv_insert_pubs]()
+#' @seealso [qcv_insert_pubs](), [qcv_insert_talks]()
 #'
 #' @export
 qcv_insert <- function(data) {
@@ -67,7 +67,7 @@ qcv_insert <- function(data) {
 #' pubs <- qcvexample$publications$articles
 #' qcv_insert_pubs(pubs)
 #'
-#' @seealso [qcv_insert]()
+#' @seealso [qcv_insert](), [qcv_insert_talks]()
 #'
 #' @export
 qcv_insert_pubs <- function(data) {
@@ -85,7 +85,12 @@ qcv_insert_pubs <- function(data) {
         paste0(d$authors, ". ")
       },
       paste0("(", d$year, "). "),
-      d$title, ". ",
+      d$title,
+      if (!substr(d$title, nchar(d$title), nchar(d$title)) %in% c("?", "!")) {
+        ". "
+      } else {
+        " "
+      },
       paste0("*", d$publication, "*, "),
       d$volume, ", ",
       d$pages, ". ",
@@ -94,6 +99,54 @@ qcv_insert_pubs <- function(data) {
       } else {
         "  \n"
       },
+      ":::\n",
+      "\n"
+    ))
+  }
+}
+
+#' Insert talks into your CV
+#'
+#' @description `qcv_insert_talks` converts a structured list (typically
+#' imported from a YAML file) into Quarto-style markdown text (including HTML/CSS
+#' where necessary) to be rendered as a list of talks. Note that the code
+#' chunk in which this function is run should be given the `output: asis` option.
+#'
+#' @param data A list in the format expected by the `qcvutils` package. See
+#' `data(qcvexample)` for an example.
+#'
+#' @returns Markdown text to be rendered with Quarto.
+#'
+#' @examples
+#' data(qcvexample)
+#' talks <- qcvexample$talks
+#' qcv_insert_talks(talks)
+#'
+#' @seealso [qcv_insert](), [qcv_insert_pubs]()
+#'
+#' @export
+qcv_insert_talks <- function(data) {
+  # Loop through each element of data
+  for (i in 1:length(data)) {
+    # Get focal element
+    d <- data[[i]]
+    # Generate output text
+    cat(paste0(
+      ":::{}\n",
+      rev(1:length(data))[i], ". ",
+      if (length(d$authors) > 1) {
+        paste0(paste0(d$authors, collapse = ", "), ". ")
+      } else {
+        paste0(d$authors, ". ")
+      },
+      paste0("(", d$date, "). "),
+      d$title,
+      if (!substr(d$title, nchar(d$title), nchar(d$title)) %in% c("?", "!")) {
+        ". "
+      } else {
+        " "
+      },
+      d$context, ".\n",
       ":::\n",
       "\n"
     ))

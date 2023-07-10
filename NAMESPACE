@@ -2,3 +2,4 @@
 
 export(qcv_insert)
 export(qcv_insert_pubs)
+export(qcv_insert_talks)

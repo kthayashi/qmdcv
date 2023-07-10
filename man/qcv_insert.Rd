@@ -26,5 +26,5 @@ qcv_insert(edu)
 
 }
 \seealso{
-\url{qcv_insert_pubs}
+\url{qcv_insert_pubs}, \url{qcv_insert_talks}
 }
