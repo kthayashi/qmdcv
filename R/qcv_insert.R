@@ -33,7 +33,7 @@ qcv_insert <- function(data) {
       cat(paste0(d$details, "  \n", collapse = ""))
     }
     if ("notes" %in% names(d)) {
-      cat("[", paste0(d$notes, "]{style='display:flex; color:gray; font-size:0.8em; margin: 0px auto;'}  \n", collapse = ""))
+      cat(paste0("[", d$notes, "]{style='display:flex; color:gray; font-size:0.8em; margin: 0px auto;'}\n", collapse = ""))
     }
     cat(":::\n")
     cat(":::{.column style='width:20%; text-align:right;'}\n")
@@ -205,6 +205,9 @@ qcv_insert_list <- function(data, type = "u") {
         "a. "
       },
       d$title,
+      if ("details" %in% names(d)) {
+        paste0(", ", d$details)
+      },
       if (all(c("start", "end") %in% names(d))) {
         paste0(" [", d$start, " - ", d$end, "]{style='float:right;'}  \n")
       } else if ("start" %in% names(d)) {
@@ -214,11 +217,8 @@ qcv_insert_list <- function(data, type = "u") {
       } else {
         "  \n"
       },
-      if ("details" %in% names(d)) {
-        paste0(spaces, d$details, "  \n")
-      },
       if ("notes" %in% names(d)) {
-        paste0(spaces, "[", d$notes, "]{style='display:flex; color:gray; font-size:0.8em; margin: 0px auto;'}\n", collapse = "")
+        paste0(spaces, "[", d$notes, "]{style='display:flex; color:gray; font-size:0.8em; margin: 0px 20% 0px auto;'}\n", collapse = "")
       }
     ))
   }
