@@ -47,3 +47,12 @@ talks:
     authors: Person A
     date: Month Day, 20XX
     context: Conference of Example-ology, Location
+teaching:
+  - title: Your awesome course
+    details: University of Example
+    years:
+      - 2019
+      - 2021-2022
+  - title: Another awesome course
+    details: University of Example
+    years: 2018, 2020

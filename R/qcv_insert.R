@@ -41,6 +41,8 @@ qcv_insert <- function(data) {
       cat(paste0(d$start, " - ", d$end, "\n"))
     } else if ("start" %in% names(d)) {
       cat(paste0(d$start, "\n"))
+    } else if ("years" %in% names(d)) {
+      cat(paste0(paste0(d$years, collapse = ", "), "\n"))
     }
     cat(":::\n")
     cat("::::::\n")
