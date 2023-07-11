@@ -29,5 +29,5 @@ qcv_insert_pubs(pubs)
 
 }
 \seealso{
-\url{qcv_insert}, \url{qcv_insert_talks}
+\url{qcv_insert}, \url{qcv_insert_talks}, \url{qcv_insert_list}
 }

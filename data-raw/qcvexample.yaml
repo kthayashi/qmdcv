@@ -53,6 +53,12 @@ teaching:
     years:
       - 2019
       - 2021-2022
+    notes:
+      - This is a note about this course
+      - This is another note about this course
   - title: Another awesome course
     details: University of Example
     years: 2018, 2020
+  - title: Another awesome course
+    details: University of Example
+    start: 2018
