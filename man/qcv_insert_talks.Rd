@@ -14,17 +14,18 @@ qcv_insert_talks(data)
 Markdown text to be rendered with Quarto.
 }
 \description{
-\code{qcv_insert_talks} converts a structured list (typically
-imported from a YAML file) into Quarto-style markdown text (including HTML/CSS
-where necessary) to be rendered as a list of talks. Note that the code
-chunk in which this function is run should be given the \code{output: asis} option.
+\code{qcv_insert_talks()} converts a structured list into Quarto-style
+markdown text to be rendered as a list of talks.
+}
+\details{
+Note: the code chunk in which this function is run should be given
+the option \code{output: asis}
 }
 \examples{
 data(qcvexample)
 talks <- qcvexample$talks
 qcv_insert_talks(talks)
-
 }
 \seealso{
-\url{qcv_insert}, \url{qcv_insert_pubs}, \url{qcv_insert_list}
+\code{\link[=qcv_insert]{qcv_insert()}}, \code{\link[=qcv_insert_pubs]{qcv_insert_pubs()}}, \code{\link[=qcv_insert_list]{qcv_insert_list()}}
 }

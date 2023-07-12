@@ -1,22 +1,16 @@
 #' Insert entries into your CV
-#'
-#' @description `qcv_insert` converts a structured list (typically imported
-#' from a YAML file) into Quarto-style markdown text (including HTML/CSS
-#' where necessary) to be rendered as a CV section. Note that the code chunk in
-#' which this function is run should be given the `output: asis` option.
-#'
+#' @description `qcv_insert()` converts a structured list into Quarto-style
+#' markdown text to be rendered as a CV section.
 #' @param data A list in the format expected by the `qcvutils` package. See
 #' `data(qcvexample)` for an example.
-#'
+#' @details Note: the code chunk in which this function is run should be given
+#' the option `output: asis`
 #' @returns Markdown text to be rendered with Quarto.
-#'
 #' @examples
 #' data(qcvexample)
 #' edu <- qcvexample$education
 #' qcv_insert(edu)
-#'
-#' @seealso [qcv_insert_pubs](), [qcv_insert_talks](), [qcv_insert_list]()
-#'
+#' @seealso [qcv_insert_pubs()], [qcv_insert_talks()], [qcv_insert_list()]
 #' @export
 qcv_insert <- function(data) {
   # Loop through each element of data
@@ -51,26 +45,19 @@ qcv_insert <- function(data) {
 }
 
 #' Insert publications into your CV
-#'
-#' @description `qcv_insert_pubs` converts a structured list (typically
-#' imported from a YAML file) into Quarto-style markdown text (including HTML/CSS
-#' where necessary) to be rendered as a list of publications. Note that the code
-#' chunk in which this function is run should be given the `output: asis` option.
-#'
+#' @description `qcv_insert_pubs()` converts a structured list into Quarto-style
+#' markdown text to be rendered as a list of publications.
 #' @param data A list in the format expected by the `qcvutils` package. See
 #' `data(qcvexample)` for an example.
-#'
 #' @details This function currently only works for journal articles.
-#'
+#' @details Note: the code chunk in which this function is run should be given
+#' the option `output: asis`
 #' @returns Markdown text to be rendered with Quarto.
-#'
 #' @examples
 #' data(qcvexample)
 #' pubs <- qcvexample$publications$articles
 #' qcv_insert_pubs(pubs)
-#'
-#' @seealso [qcv_insert](), [qcv_insert_talks](), [qcv_insert_list]()
-#'
+#' @seealso [qcv_insert()], [qcv_insert_talks()], [qcv_insert_list()]
 #' @export
 qcv_insert_pubs <- function(data) {
   # Loop through each element of data
@@ -108,24 +95,18 @@ qcv_insert_pubs <- function(data) {
 }
 
 #' Insert talks into your CV
-#'
-#' @description `qcv_insert_talks` converts a structured list (typically
-#' imported from a YAML file) into Quarto-style markdown text (including HTML/CSS
-#' where necessary) to be rendered as a list of talks. Note that the code
-#' chunk in which this function is run should be given the `output: asis` option.
-#'
+#' @description `qcv_insert_talks()` converts a structured list into Quarto-style
+#' markdown text to be rendered as a list of talks.
 #' @param data A list in the format expected by the `qcvutils` package. See
 #' `data(qcvexample)` for an example.
-#'
+#' @details Note: the code chunk in which this function is run should be given
+#' the option `output: asis`
 #' @returns Markdown text to be rendered with Quarto.
-#'
 #' @examples
 #' data(qcvexample)
 #' talks <- qcvexample$talks
 #' qcv_insert_talks(talks)
-#'
-#' @seealso [qcv_insert](), [qcv_insert_pubs](), [qcv_insert_list]()
-#'
+#' @seealso [qcv_insert()], [qcv_insert_pubs()], [qcv_insert_list()]
 #' @export
 qcv_insert_talks <- function(data) {
   # Loop through each element of data
@@ -156,12 +137,8 @@ qcv_insert_talks <- function(data) {
 }
 
 #' Insert a list into your CV
-#'
-#' @description `qcv_insert_list` converts a structured list (typically imported
-#' from a YAML file) into Quarto-style markdown text (including HTML/CSS
-#' where necessary) to be rendered as a CV section. Note that the code chunk in
-#' which this function is run should be given the `output: asis` option.
-#'
+#' @description `qcv_insert_list()` converts a structured list into Quarto-style
+#' markdown text to be rendered as a list.
 #' @param data A list in the format expected by the `qcvutils` package. See
 #' `data(qcvexample)` for an example.
 #' @param type Type of list to insert. Choose from among:
@@ -169,16 +146,19 @@ qcv_insert_talks <- function(data) {
 #' - `"1"`: numbered list
 #' - `"a"`: alphabetical list
 #' - `"n"`: no bullets
-#'
+#' @details This function is currently known to provide undesirable output when
+#' supplied `title` and/or `details` are long AND `start`/`end`/`years` are
+#' provided. When using this function, one should ideally supply only short
+#' `title` and `details`. If longer `title` and/or `details` are needed,
+#' consider using [qcv_insert()].
+#' @details Note: the code chunk in which this function is run should be given
+#' the option `output: asis`
 #' @returns Markdown text to be rendered with Quarto.
-#'
 #' @examples
 #' data(qcvexample)
 #' teaching <- qcvexample$teaching
 #' qcv_insert_list(teaching)
-#'
-#' @seealso [qcv_insert](), [qcv_insert_pubs](), [qcv_insert_talks]()
-#'
+#' @seealso [qcv_insert()], [qcv_insert_pubs()], [qcv_insert_talks()]
 #' @export
 qcv_insert_list <- function(data, type = "u") {
   # Loop through each element of data

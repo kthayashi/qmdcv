@@ -1,5 +1,5 @@
 Package: qcvutils
-Title: Curriculum Vitae Functions for Use With Quarto
+Title: Utility Functions for Creating a Curriculum Vitae with Quarto
 Version: 0.0.0.9000
 Authors@R: 
     person(c("Kenji", "T."), "Hayashi", email = "kenjithayashi@gmail.com",

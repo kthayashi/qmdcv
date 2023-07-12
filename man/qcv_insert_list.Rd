@@ -22,17 +22,24 @@ qcv_insert_list(data, type = "u")
 Markdown text to be rendered with Quarto.
 }
 \description{
-\code{qcv_insert_list} converts a structured list (typically imported
-from a YAML file) into Quarto-style markdown text (including HTML/CSS
-where necessary) to be rendered as a CV section. Note that the code chunk in
-which this function is run should be given the \code{output: asis} option.
+\code{qcv_insert_list()} converts a structured list into Quarto-style
+markdown text to be rendered as a list.
+}
+\details{
+This function is currently known to provide undesirable output when
+supplied \code{title} and/or \code{details} are long AND \code{start}/\code{end}/\code{years} are
+provided. When using this function, one should ideally supply only short
+\code{title} and \code{details}. If longer \code{title} and/or \code{details} are needed,
+consider using \code{\link[=qcv_insert]{qcv_insert()}}.
+
+Note: the code chunk in which this function is run should be given
+the option \code{output: asis}
 }
 \examples{
 data(qcvexample)
 teaching <- qcvexample$teaching
 qcv_insert_list(teaching)
-
 }
 \seealso{
-\url{qcv_insert}, \url{qcv_insert_pubs}, \url{qcv_insert_talks}
+\code{\link[=qcv_insert]{qcv_insert()}}, \code{\link[=qcv_insert_pubs]{qcv_insert_pubs()}}, \code{\link[=qcv_insert_talks]{qcv_insert_talks()}}
 }

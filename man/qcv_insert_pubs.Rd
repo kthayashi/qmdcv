@@ -14,20 +14,20 @@ qcv_insert_pubs(data)
 Markdown text to be rendered with Quarto.
 }
 \description{
-\code{qcv_insert_pubs} converts a structured list (typically
-imported from a YAML file) into Quarto-style markdown text (including HTML/CSS
-where necessary) to be rendered as a list of publications. Note that the code
-chunk in which this function is run should be given the \code{output: asis} option.
+\code{qcv_insert_pubs()} converts a structured list into Quarto-style
+markdown text to be rendered as a list of publications.
 }
 \details{
 This function currently only works for journal articles.
+
+Note: the code chunk in which this function is run should be given
+the option \code{output: asis}
 }
 \examples{
 data(qcvexample)
 pubs <- qcvexample$publications$articles
 qcv_insert_pubs(pubs)
-
 }
 \seealso{
-\url{qcv_insert}, \url{qcv_insert_talks}, \url{qcv_insert_list}
+\code{\link[=qcv_insert]{qcv_insert()}}, \code{\link[=qcv_insert_talks]{qcv_insert_talks()}}, \code{\link[=qcv_insert_list]{qcv_insert_list()}}
 }
