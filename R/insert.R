@@ -1,18 +1,18 @@
 #' Insert entries into your CV
-#' @description `qcv_insert()` converts a structured list into Quarto-style
-#' markdown text to be rendered as a CV section.
+#' @description `insert()` converts a structured list into Quarto-style
+#' Markdown text to be rendered as a CV section.
 #' @param data A list in the format expected by the `qmdcv` package. See
-#' `data(qcvexample)` for an example.
+#' `data(example_data)` for an example.
 #' @details Note: the code chunk in which this function is run should be given
 #' the option `output: asis`
 #' @returns Markdown text to be rendered with Quarto.
 #' @examples
-#' data(qcvexample)
-#' edu <- qcvexample$education
-#' qcv_insert(edu)
-#' @seealso [qcv_insert_pubs()], [qcv_insert_talks()], [qcv_insert_list()]
+#' data(example_data)
+#' edu <- example_data$education
+#' insert(edu)
+#' @seealso [insert_pubs()], [insert_talks()], [insert_list()]
 #' @export
-qcv_insert <- function(data) {
+insert <- function(data) {
   # Loop through each element of data
   for (i in 1:length(data)) {
     # Get focal element
@@ -45,21 +45,21 @@ qcv_insert <- function(data) {
 }
 
 #' Insert publications into your CV
-#' @description `qcv_insert_pubs()` converts a structured list into Quarto-style
-#' markdown text to be rendered as a list of publications.
+#' @description `insert_pubs()` converts a structured list into Quarto-style
+#' Markdown text to be rendered as a list of publications.
 #' @param data A list in the format expected by the `qmdcv` package. See
-#' `data(qcvexample)` for an example.
+#' `data(example_data)` for an example.
 #' @details This function currently only works for journal articles.
 #' @details Note: the code chunk in which this function is run should be given
 #' the option `output: asis`
 #' @returns Markdown text to be rendered with Quarto.
 #' @examples
-#' data(qcvexample)
-#' pubs <- qcvexample$publications$articles
-#' qcv_insert_pubs(pubs)
-#' @seealso [qcv_insert()], [qcv_insert_talks()], [qcv_insert_list()]
+#' data(example_data)
+#' pubs <- example_data$publications$articles
+#' insert_pubs(pubs)
+#' @seealso [insert()], [insert_talks()], [insert_list()]
 #' @export
-qcv_insert_pubs <- function(data) {
+insert_pubs <- function(data) {
   # Loop through each element of data
   for (i in 1:length(data)) {
     # Get focal element
@@ -95,20 +95,20 @@ qcv_insert_pubs <- function(data) {
 }
 
 #' Insert talks into your CV
-#' @description `qcv_insert_talks()` converts a structured list into Quarto-style
-#' markdown text to be rendered as a list of talks.
+#' @description `insert_talks()` converts a structured list into Quarto-style
+#' Markdown text to be rendered as a list of talks.
 #' @param data A list in the format expected by the `qmdcv` package. See
-#' `data(qcvexample)` for an example.
+#' `data(example_data)` for an example.
 #' @details Note: the code chunk in which this function is run should be given
 #' the option `output: asis`
 #' @returns Markdown text to be rendered with Quarto.
 #' @examples
-#' data(qcvexample)
-#' talks <- qcvexample$talks
-#' qcv_insert_talks(talks)
-#' @seealso [qcv_insert()], [qcv_insert_pubs()], [qcv_insert_list()]
+#' data(example_data)
+#' talks <- example_data$talks
+#' insert_talks(talks)
+#' @seealso [insert()], [insert_pubs()], [insert_list()]
 #' @export
-qcv_insert_talks <- function(data) {
+insert_talks <- function(data) {
   # Loop through each element of data
   for (i in 1:length(data)) {
     # Get focal element
@@ -137,10 +137,10 @@ qcv_insert_talks <- function(data) {
 }
 
 #' Insert a list into your CV
-#' @description `qcv_insert_list()` converts a structured list into Quarto-style
-#' markdown text to be rendered as a list.
+#' @description `insert_list()` converts a structured list into Quarto-style
+#' Markdown text to be rendered as a list.
 #' @param data A list in the format expected by the `qmdcv` package. See
-#' `data(qcvexample)` for an example.
+#' `data(example_data)` for an example.
 #' @param type Type of list to insert. Choose from among:
 #' - `"u"`: unordered list
 #' - `"1"`: numbered list
@@ -150,17 +150,17 @@ qcv_insert_talks <- function(data) {
 #' supplied `title` and/or `details` are long AND `start`/`end`/`years` are
 #' provided. When using this function, one should ideally supply only short
 #' `title` and `details`. If longer `title` and/or `details` are needed,
-#' consider using [qcv_insert()].
+#' consider using [insert()].
 #' @details Note: the code chunk in which this function is run should be given
 #' the option `output: asis`
 #' @returns Markdown text to be rendered with Quarto.
 #' @examples
-#' data(qcvexample)
-#' teaching <- qcvexample$teaching
-#' qcv_insert_list(teaching)
-#' @seealso [qcv_insert()], [qcv_insert_pubs()], [qcv_insert_talks()]
+#' data(example_data)
+#' teaching <- example_data$teaching
+#' insert_list(teaching)
+#' @seealso [insert()], [insert_pubs()], [insert_talks()]
 #' @export
-qcv_insert_list <- function(data, type = "u") {
+insert_list <- function(data, type = "u") {
   # Loop through each element of data
   for (i in 1:length(data)) {
     # Get focal element

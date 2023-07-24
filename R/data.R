@@ -1,8 +1,7 @@
 #' Example CV data
 #'
-#' A list containing example CV data in the format expected by the `qmdcv`
-#' package.
+#' Example CV data in the format expected by the `qmdcv` package.
 #'
-#' @usage data(qcvexample)
+#' @usage data(example_data, package = "qmdcv")
 #' @format A list.
-"qcvexample"
+"example_data"
