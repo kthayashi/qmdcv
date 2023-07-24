@@ -1,10 +1,15 @@
 #' Insert entries into your CV
-#' @description `insert()` converts a structured list into Quarto-style
-#' Markdown text to be rendered as a CV section.
-#' @param data A list in the format expected by the `qmdcv` package. See
-#' `data(example_data)` for an example.
-#' @details Note: the code chunk in which this function is run should be given
-#' the option `output: asis`
+#' @description `insert()` converts a list of CV entry data into Quarto-style
+#' Markdown text.
+#' @param data A list of one or more lists, where each sub-list contains CV
+#' entry data. See `data(example_data)` for an example.
+#' @details The following sub-list elements are recognized:
+#' - `title` (string)
+#' - `start` (string)
+#' - `end` (string)
+#' - `years` (string or vector; `start/end` takes precedent)
+#' - `details` (string or vector)
+#' - `notes` (string or vector)
 #' @returns Markdown text to be rendered with Quarto.
 #' @examples
 #' data(example_data)
@@ -18,29 +23,31 @@ insert <- function(data) {
     # Get focal element
     d <- data[[i]]
     # Generate output text
-    cat("::::::{.columns}\n")
-    cat(":::{.column style='width:80%; text-align:left;'}\n")
-    if ("title" %in% names(d)) {
-      cat(paste0("**", d$title, "**  \n"))
-    }
-    if ("details" %in% names(d)) {
-      cat(paste0(d$details, "  \n", collapse = ""))
-    }
-    if ("notes" %in% names(d)) {
-      cat(paste0("[", d$notes, "]{style='display:flex; color:gray; font-size:0.8em; margin: 0px auto;'}\n", collapse = ""))
-    }
-    cat(":::\n")
-    cat(":::{.column style='width:20%; text-align:right;'}\n")
-    if (all(c("start", "end") %in% names(d))) {
-      cat(paste0(d$start, " - ", d$end, "\n"))
-    } else if ("start" %in% names(d)) {
-      cat(paste0(d$start, "\n"))
-    } else if ("years" %in% names(d)) {
-      cat(paste0(paste0(d$years, collapse = ", "), "\n"))
-    }
-    cat(":::\n")
-    cat("::::::\n")
-    cat("\n")
+    cat(paste0(
+      "::::::{.columns}\n",
+      ":::{.column style='width:80%; text-align:left;'}\n",
+      if ("title" %in% names(d)) {
+        paste0("**", d$title, "**  \n")
+      },
+      if ("details" %in% names(d)) {
+        paste0(d$details, "  \n", collapse = "")
+      },
+      if ("notes" %in% names(d)) {
+        paste0("[", d$notes, "]{style='display:flex; color:gray; font-size:0.8em; margin: 0px auto;'}\n", collapse = "")
+      },
+      ":::\n",
+      ":::{.column style='width:20%; text-align:right;'}\n",
+      if (all(c("start", "end") %in% names(d))) {
+        paste0(d$start, " - ", d$end, "\n")
+      } else if ("start" %in% names(d)) {
+        paste0(d$start, "\n")
+      } else if ("years" %in% names(d)) {
+        paste0(paste0(d$years, collapse = ", "), "\n")
+      },
+      ":::\n",
+      "::::::\n",
+      "\n"
+    ))
   }
 }
 

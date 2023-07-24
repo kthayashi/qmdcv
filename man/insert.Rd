@@ -7,19 +7,26 @@
 insert(data)
 }
 \arguments{
-\item{data}{A list in the format expected by the \code{qmdcv} package. See
-\code{data(example_data)} for an example.}
+\item{data}{A list of one or more lists, where each sub-list contains CV
+entry data. See \code{data(example_data)} for an example.}
 }
 \value{
 Markdown text to be rendered with Quarto.
 }
 \description{
-\code{insert()} converts a structured list into Quarto-style
-Markdown text to be rendered as a CV section.
+\code{insert()} converts a list of CV entry data into Quarto-style
+Markdown text.
 }
 \details{
-Note: the code chunk in which this function is run should be given
-the option \code{output: asis}
+The following sub-list elements are recognized:
+\itemize{
+\item \code{title} (string)
+\item \code{start} (string)
+\item \code{end} (string)
+\item \code{years} (string or vector; \code{start/end} takes precedent)
+\item \code{details} (string or vector)
+\item \code{notes} (string or vector)
+}
 }
 \examples{
 data(example_data)

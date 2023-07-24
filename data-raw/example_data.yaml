@@ -1,14 +1,14 @@
 education:
-  - title: Ph.D. in Example-ology
-    start: 20XX
-    end: 20YY
+  - title: Ph.D. in XXXXX
+    start: YYYY
+    end: YYYY
     details:
-      - University of Example
-      - "Advisor: Dr. Example"
-  - title: B.S. in Example-ology
-    start: 20xx
-    end: 20yy
-    details: Example University
+      - University of XXXXX
+      - "Advisor: Dr. XXXXX"
+  - title: B.S. in XXXXX
+    start: YYYY
+    end: YYYY
+    details: XXXX University
 grants:
   - title: This Grant
     start: 20AA
