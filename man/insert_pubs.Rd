@@ -7,21 +7,28 @@
 insert_pubs(data)
 }
 \arguments{
-\item{data}{A list in the format expected by the \code{qmdcv} package. See
-\code{data(example_data)} for an example.}
+\item{data}{A list of one or more lists, where each sub-list contains
+publication data. See \code{data(example_data)} for an example.}
 }
 \value{
 Markdown text to be rendered with Quarto.
 }
 \description{
-\code{insert_pubs()} converts a structured list into Quarto-style
-Markdown text to be rendered as a list of publications.
+\code{insert_pubs()} converts a list of publication data into
+Quarto-style Markdown text. This function only supports journal articles at
+present.
 }
 \details{
-This function currently only works for journal articles.
-
-Note: the code chunk in which this function is run should be given
-the option \code{output: asis}
+The following sub-list elements are recognized:
+\itemize{
+\item \code{authors} (string or vector)
+\item \code{year} (string)
+\item \code{title} (string)
+\item \code{publication} (string)
+\item \code{volume} (string)
+\item \code{pages} (string)
+\item \code{doi} (string)
+}
 }
 \examples{
 data(example_data)

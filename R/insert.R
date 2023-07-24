@@ -18,11 +18,8 @@
 #' @seealso [insert_pubs()], [insert_talks()], [insert_list()]
 #' @export
 insert <- function(data) {
-  # Loop through each element of data
   for (i in 1:length(data)) {
-    # Get focal element
     d <- data[[i]]
-    # Generate output text
     cat(paste0(
       "::::::{.columns}\n",
       ":::{.column style='width:80%; text-align:left;'}\n",
@@ -52,13 +49,19 @@ insert <- function(data) {
 }
 
 #' Insert publications into your CV
-#' @description `insert_pubs()` converts a structured list into Quarto-style
-#' Markdown text to be rendered as a list of publications.
-#' @param data A list in the format expected by the `qmdcv` package. See
-#' `data(example_data)` for an example.
-#' @details This function currently only works for journal articles.
-#' @details Note: the code chunk in which this function is run should be given
-#' the option `output: asis`
+#' @description `insert_pubs()` converts a list of publication data into
+#' Quarto-style Markdown text. This function only supports journal articles at
+#' present.
+#' @param data A list of one or more lists, where each sub-list contains
+#' publication data. See `data(example_data)` for an example.
+#' @details The following sub-list elements are recognized:
+#' - `authors` (string or vector)
+#' - `year` (string)
+#' - `title` (string)
+#' - `publication` (string)
+#' - `volume` (string)
+#' - `pages` (string)
+#' - `doi` (string)
 #' @returns Markdown text to be rendered with Quarto.
 #' @examples
 #' data(example_data)
@@ -67,11 +70,8 @@ insert <- function(data) {
 #' @seealso [insert()], [insert_talks()], [insert_list()]
 #' @export
 insert_pubs <- function(data) {
-  # Loop through each element of data
   for (i in 1:length(data)) {
-    # Get focal element
     d <- data[[i]]
-    # Generate output text
     cat(paste0(
       ":::{}\n",
       rev(1:length(data))[i], ". ",
