@@ -1,12 +1,14 @@
-Package: qcvutils
-Title: Utility Functions for Creating a Curriculum Vitae with Quarto
+Package: qmdcv
+Title: Create a Curriculum Vitae from a QMD document
 Version: 0.0.0.9000
 Authors@R: 
     person(c("Kenji", "T."), "Hayashi", email = "kenjithayashi@gmail.com",
            role = c("aut", "cre"), comment = c(ORCID = "0000-0002-7598-1865"))
-Description: Utility functions for creating an HTML curriculum vitae with 
-    Quarto. This package is neither associated with nor endorsed by the Quarto
-    open source project.
+Description: This package contains a number of utility functions for creating a
+    curriculum vitae using Quarto. The core functionality of the package is to
+    convert structured data, supplied as a YAML file and/or lists in R, into
+    Markdown (QMD) text to be rendered with Quarto. This package is neither
+    associated with nor endorsed by the Quarto open source project.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

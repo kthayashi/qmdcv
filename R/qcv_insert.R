@@ -1,7 +1,7 @@
 #' Insert entries into your CV
 #' @description `qcv_insert()` converts a structured list into Quarto-style
 #' markdown text to be rendered as a CV section.
-#' @param data A list in the format expected by the `qcvutils` package. See
+#' @param data A list in the format expected by the `qmdcv` package. See
 #' `data(qcvexample)` for an example.
 #' @details Note: the code chunk in which this function is run should be given
 #' the option `output: asis`
@@ -47,7 +47,7 @@ qcv_insert <- function(data) {
 #' Insert publications into your CV
 #' @description `qcv_insert_pubs()` converts a structured list into Quarto-style
 #' markdown text to be rendered as a list of publications.
-#' @param data A list in the format expected by the `qcvutils` package. See
+#' @param data A list in the format expected by the `qmdcv` package. See
 #' `data(qcvexample)` for an example.
 #' @details This function currently only works for journal articles.
 #' @details Note: the code chunk in which this function is run should be given
@@ -97,7 +97,7 @@ qcv_insert_pubs <- function(data) {
 #' Insert talks into your CV
 #' @description `qcv_insert_talks()` converts a structured list into Quarto-style
 #' markdown text to be rendered as a list of talks.
-#' @param data A list in the format expected by the `qcvutils` package. See
+#' @param data A list in the format expected by the `qmdcv` package. See
 #' `data(qcvexample)` for an example.
 #' @details Note: the code chunk in which this function is run should be given
 #' the option `output: asis`
@@ -139,7 +139,7 @@ qcv_insert_talks <- function(data) {
 #' Insert a list into your CV
 #' @description `qcv_insert_list()` converts a structured list into Quarto-style
 #' markdown text to be rendered as a list.
-#' @param data A list in the format expected by the `qcvutils` package. See
+#' @param data A list in the format expected by the `qmdcv` package. See
 #' `data(qcvexample)` for an example.
 #' @param type Type of list to insert. Choose from among:
 #' - `"u"`: unordered list

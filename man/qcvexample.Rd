@@ -11,7 +11,7 @@ A list.
 data(qcvexample)
 }
 \description{
-A list containing example CV data in the format expected by the \code{qcvutils}
+A list containing example CV data in the format expected by the \code{qmdcv}
 package.
 }
 \keyword{datasets}

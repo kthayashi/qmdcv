@@ -7,7 +7,7 @@
 qcv_insert_talks(data)
 }
 \arguments{
-\item{data}{A list in the format expected by the \code{qcvutils} package. See
+\item{data}{A list in the format expected by the \code{qmdcv} package. See
 \code{data(qcvexample)} for an example.}
 }
 \value{

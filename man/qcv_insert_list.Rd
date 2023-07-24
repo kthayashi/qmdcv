@@ -7,7 +7,7 @@
 qcv_insert_list(data, type = "u")
 }
 \arguments{
-\item{data}{A list in the format expected by the \code{qcvutils} package. See
+\item{data}{A list in the format expected by the \code{qmdcv} package. See
 \code{data(qcvexample)} for an example.}
 
 \item{type}{Type of list to insert. Choose from among:
