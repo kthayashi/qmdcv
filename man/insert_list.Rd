@@ -7,8 +7,8 @@
 insert_list(data, type = "u")
 }
 \arguments{
-\item{data}{A list in the format expected by the \code{qmdcv} package. See
-\code{data(example_data)} for an example.}
+\item{data}{A list of one or more lists, where each sub-list contains
+list data. See \code{data(example_data)} for an example.}
 
 \item{type}{Type of list to insert. Choose from among:
 \itemize{
@@ -22,18 +22,27 @@ insert_list(data, type = "u")
 Markdown text to be rendered with Quarto.
 }
 \description{
-\code{insert_list()} converts a structured list into Quarto-style
-Markdown text to be rendered as a list.
+\code{insert_list()} converts list data into Quarto-style
+Markdown text. Lists produced by this function can be unordered, numbered,
+alphabetical, or without bullets.
 }
 \details{
+The following sub-list elements are recognized:
+\itemize{
+\item \code{title} (string)
+\item \code{start} (string)
+\item \code{end} (string)
+\item \code{years} (string or vector; \code{start/end} takes precedent)
+\item \code{details} (string)
+\item \code{notes} (string or vector)
+}
+}
+\note{
 This function is currently known to provide undesirable output when
 supplied \code{title} and/or \code{details} are long AND \code{start}/\code{end}/\code{years} are
 provided. When using this function, one should ideally supply only short
 \code{title} and \code{details}. If longer \code{title} and/or \code{details} are needed,
 consider using \code{\link[=insert]{insert()}}.
-
-Note: the code chunk in which this function is run should be given
-the option \code{output: asis}
 }
 \examples{
 data(example_data)

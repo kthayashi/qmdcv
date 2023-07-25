@@ -144,22 +144,28 @@ insert_talks <- function(data) {
 }
 
 #' Insert a list into your CV
-#' @description `insert_list()` converts a structured list into Quarto-style
-#' Markdown text to be rendered as a list.
-#' @param data A list in the format expected by the `qmdcv` package. See
-#' `data(example_data)` for an example.
+#' @description `insert_list()` converts list data into Quarto-style
+#' Markdown text. Lists produced by this function can be unordered, numbered,
+#' alphabetical, or without bullets.
+#' @param data A list of one or more lists, where each sub-list contains
+#' list data. See `data(example_data)` for an example.
 #' @param type Type of list to insert. Choose from among:
 #' - `"u"`: unordered list
 #' - `"1"`: numbered list
 #' - `"a"`: alphabetical list
 #' - `"n"`: no bullets
-#' @details This function is currently known to provide undesirable output when
+#' @details The following sub-list elements are recognized:
+#' - `title` (string)
+#' - `start` (string)
+#' - `end` (string)
+#' - `years` (string or vector; `start/end` takes precedent)
+#' - `details` (string)
+#' - `notes` (string or vector)
+#' @note This function is currently known to provide undesirable output when
 #' supplied `title` and/or `details` are long AND `start`/`end`/`years` are
 #' provided. When using this function, one should ideally supply only short
 #' `title` and `details`. If longer `title` and/or `details` are needed,
 #' consider using [insert()].
-#' @details Note: the code chunk in which this function is run should be given
-#' the option `output: asis`
 #' @returns Markdown text to be rendered with Quarto.
 #' @examples
 #' data(example_data)
@@ -168,11 +174,8 @@ insert_talks <- function(data) {
 #' @seealso [insert()], [insert_pubs()], [insert_talks()]
 #' @export
 insert_list <- function(data, type = "u") {
-  # Loop through each element of data
   for (i in 1:length(data)) {
-    # Get focal element
     d <- data[[i]]
-    # Set up spaces for details and notes
     if (type == c("u")) {
       spaces <- "  "
     } else if (type %in% c("1", "a")) {
@@ -182,7 +185,6 @@ insert_list <- function(data, type = "u") {
     } else {
       stop('Choose list type from among "u", "1", "a", or "n"')
     }
-    # Generate output text
     cat(paste0(
       if (type == "u") {
         "* "

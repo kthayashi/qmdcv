@@ -51,17 +51,18 @@ talks:
     date: MM DD, YYYY
     context: Conference of XXXXX
 teaching:
-  - title: Your awesome course
-    details: University of Example
+  - title: XXXXX
+    details: University of XXXXX
     years:
-      - 2019
-      - 2021-2022
+      - YYYY
+      - YYYY-YYYY
+  - title: XXXXX
+    details: University of XXXXX
+    years: YYYY, YYYY
+    notes: xxxxx xxxxx xxxxx xxxxx xxxxx
+  - title: XXXXX
+    details: University of XXXXX
+    start: YYYY
     notes:
-      - This is a note about this course
-      - This is another note about this course
-  - title: Another awesome course
-    details: University of Example
-    years: 2018, 2020
-  - title: Another awesome course
-    details: University of Example
-    start: 2018
+      - xxxxx xxxxx xxxxx xxxxx xxxxx
+      - xxxxx xxxxx xxxxx xxxxx xxxxx
