@@ -101,13 +101,16 @@ insert_pubs <- function(data) {
   }
 }
 
-#' Insert talks into your CV
-#' @description `insert_talks()` converts a structured list into Quarto-style
-#' Markdown text to be rendered as a list of talks.
-#' @param data A list in the format expected by the `qmdcv` package. See
-#' `data(example_data)` for an example.
-#' @details Note: the code chunk in which this function is run should be given
-#' the option `output: asis`
+#' Insert talks/presentations into your CV
+#' @description `insert_talks()` converts a list of talk/presentation data into
+#' Quarto-style Markdown text.
+#' @param data A list of one or more lists, where each sub-list contains
+#' talk/presentation data. See `data(example_data)` for an example.
+#' @details The following sub-list elements are recognized:
+#' - `authors` (string or vector)
+#' - `date` (string)
+#' - `title` (string)
+#' - `context` (string)
 #' @returns Markdown text to be rendered with Quarto.
 #' @examples
 #' data(example_data)
@@ -116,11 +119,8 @@ insert_pubs <- function(data) {
 #' @seealso [insert()], [insert_pubs()], [insert_list()]
 #' @export
 insert_talks <- function(data) {
-  # Loop through each element of data
   for (i in 1:length(data)) {
-    # Get focal element
     d <- data[[i]]
-    # Generate output text
     cat(paste0(
       ":::{}\n",
       rev(1:length(data))[i], ". ",

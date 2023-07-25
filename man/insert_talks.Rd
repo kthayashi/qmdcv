@@ -2,24 +2,29 @@
 % Please edit documentation in R/insert.R
 \name{insert_talks}
 \alias{insert_talks}
-\title{Insert talks into your CV}
+\title{Insert talks/presentations into your CV}
 \usage{
 insert_talks(data)
 }
 \arguments{
-\item{data}{A list in the format expected by the \code{qmdcv} package. See
-\code{data(example_data)} for an example.}
+\item{data}{A list of one or more lists, where each sub-list contains
+talk/presentation data. See \code{data(example_data)} for an example.}
 }
 \value{
 Markdown text to be rendered with Quarto.
 }
 \description{
-\code{insert_talks()} converts a structured list into Quarto-style
-Markdown text to be rendered as a list of talks.
+\code{insert_talks()} converts a list of talk/presentation data into
+Quarto-style Markdown text.
 }
 \details{
-Note: the code chunk in which this function is run should be given
-the option \code{output: asis}
+The following sub-list elements are recognized:
+\itemize{
+\item \code{authors} (string or vector)
+\item \code{date} (string)
+\item \code{title} (string)
+\item \code{context} (string)
+}
 }
 \examples{
 data(example_data)
