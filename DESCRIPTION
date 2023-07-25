@@ -7,9 +7,11 @@ Authors@R:
 Description: This package contains a number of utility functions for creating a
     curriculum vitae using Quarto. The core functionality of the package is to
     convert structured data, supplied as a YAML file and/or lists in R, into
-    Markdown (QMD) text to be rendered with Quarto. This package is neither
+    Markdown (.qmd) text to be rendered with Quarto. This package is neither
     associated with nor endorsed by the Quarto open source project.
 License: MIT + file LICENSE
+URL: https://github.com/kthayashi/qmdcv
+BugReports: https://github.com/kthayashi/qmdcv/issues
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
