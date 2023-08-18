@@ -131,7 +131,7 @@ insert_pubs <- function(data) {
 #' @seealso [insert_pubs()]
 #' @export
 insert_pubs_web <- function(data) {
-  if (!dir.exists(paste0(getwd(), "/_extensions/quarto-ext/fontawesome"))) {
+  if (!dir.exists(paste0(here::here(), "/_extensions/quarto-ext/fontawesome"))) {
     stop("Install the Font Awesome Extension for Quarto: https://github.com/quarto-ext/fontawesome")
   }
   style <- "text-decoration: none; font-size: 0.8em; padding: 0.25em 0.5em; border: solid 1px; border-radius: 4px; box-sizing: border-box;"
