@@ -3,4 +3,5 @@
 export(insert)
 export(insert_list)
 export(insert_pubs)
+export(insert_pubs_web)
 export(insert_talks)

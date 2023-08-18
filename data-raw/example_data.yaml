@@ -29,6 +29,8 @@ publications:
       volume: vol
       pages: p-p
       doi: xxxxx
+      data: xxxxx
+      code: xxxxx
     - title: XXXXX
       authors:
         - "**Person 1**"
@@ -41,6 +43,8 @@ publications:
       volume: vol
       pages: p-p
       doi: xxxxx
+      data: xxxxx
+      code: xxxxx
 talks:
   - title: XXXXX
     authors: "**Person 1**"

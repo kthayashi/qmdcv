@@ -67,7 +67,7 @@ insert <- function(data) {
 #' data(example_data)
 #' pubs <- example_data$publications$articles
 #' insert_pubs(pubs)
-#' @seealso [insert()], [insert_talks()], [insert_list()]
+#' @seealso [insert_pubs_web()], [insert()], [insert_talks()], [insert_list()]
 #' @export
 insert_pubs <- function(data) {
   for (i in 1:length(data)) {
@@ -95,6 +95,76 @@ insert_pubs <- function(data) {
       } else {
         "  \n"
       },
+      ":::\n",
+      "\n"
+    ))
+  }
+}
+
+#' Insert publications into your web page
+#' @description `insert_pubs_web()` converts a list of publication data into
+#' Quarto-style Markdown text, as does [insert_pubs()], but with additional
+#' formatting for web pages. This function only supports journal articles at
+#' present.
+#' @param data A list of one or more lists, where each sub-list contains
+#' publication data. See `data(example_data)` for an example.
+#' @details The following sub-list elements are recognized:
+#' - `authors` (string or vector)
+#' - `year` (string)
+#' - `title` (string)
+#' - `publication` (string)
+#' - `volume` (string)
+#' - `pages` (string)
+#' - `doi` (string)
+#' - `data` (string)
+#' - `code` (string)
+#' @note This function uses the
+#' [Font Awesome Extension](https://github.com/quarto-ext/fontawesome) for
+#' Quarto. Make sure to install this extension to the project root directory.
+#' @returns Markdown text to be rendered with Quarto.
+#' @examples
+#' \dontrun{
+#' data(example_data)
+#' pubs <- example_data$publications$articles
+#' insert_pubs_web(pubs)
+#' }
+#' @seealso [insert_pubs()]
+#' @export
+insert_pubs_web <- function(data) {
+  if (!dir.exists(paste0(getwd(), "/_extensions/quarto-ext/fontawesome"))) {
+    stop("Install the Font Awesome Extension for Quarto: https://github.com/quarto-ext/fontawesome")
+  }
+  style <- "text-decoration: none; font-size: 0.8em; padding: 0.25em 0.5em; border: solid 1px; border-radius: 4px; box-sizing: border-box;"
+  for (i in 1:length(data)) {
+    d <- data[[i]]
+    cat(paste0(
+      ":::{}\n",
+      rev(1:length(data))[i], ". ",
+      if (length(d$authors) > 1) {
+        paste0(paste0(d$authors, collapse = ", "), ". ")
+      } else {
+        paste0(d$authors, ". ")
+      },
+      paste0("(", d$year, "). "),
+      d$title,
+      if (!substr(d$title, nchar(d$title), nchar(d$title)) %in% c("?", "!")) {
+        ". "
+      } else {
+        " "
+      },
+      paste0("*", d$publication, "*, "),
+      d$volume, ", ",
+      d$pages, ".  \n",
+      if ("doi" %in% names(d)) {
+        paste0("[{{< fa regular file-lines title='Article' label='Article'>}} Article](https://doi.org/", d$doi, "){style='", style, "'} ")
+      },
+      if ("data" %in% names(d)) {
+        paste0("[{{< fa solid database title='Data' label='Data'>}} Data](", d$data, "){style='", style, "'} ")
+      },
+      if ("code" %in% names(d)) {
+        paste0("[{{< fa solid code title='Code' label='Code'>}} Code](", d$code, "){style='", style, "'} ")
+      },
+      "  \n",
       ":::\n",
       "\n"
     ))
