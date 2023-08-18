@@ -21,7 +21,8 @@ file and rendered as an HTML document with Quarto.
 This package was inspired by the
 [`vitae`](https://github.com/mitchelloharawild/vitae/) and
 [`datadrivencv`](https://github.com/nstrayer/datadrivencv) packages. Go
-check them out if you are looking for a more general-purpose package.
+check them out if you are looking for a more robust, general-purpose
+package.
 
 ## Disclaimers
 
@@ -34,7 +35,7 @@ check them out if you are looking for a more general-purpose package.
 
 ## Installation
 
-Install `qmdcv` from [GitHub](https://github.com/) with:
+Install `qmdcv` from [GitHub](https://github.com/kthayashi/qmdcv) with:
 
 ``` r
 # install.packages("devtools")
