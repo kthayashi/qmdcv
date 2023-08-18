@@ -1,6 +1,6 @@
 Package: qmdcv
-Title: Create a Curriculum Vitae from a QMD document
-Version: 0.0.0.9000
+Title: Create a Curriculum Vitae by inserting data into a QMD document
+Version: 0.1.0
 Authors@R: 
     person(c("Kenji", "T."), "Hayashi", email = "kenjithayashi@gmail.com",
            role = c("aut", "cre"), comment = c(ORCID = "0000-0002-7598-1865"))
