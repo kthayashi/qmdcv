@@ -49,9 +49,17 @@ Install `qmdcv` from [GitHub](https://github.com/) with:
 devtools::install_github("kthayashi/qmdcv")
 ```
 
+To make use of the functionality of this package, you will need to install
+[Quarto](https://quarto.org/docs/get-started/) separately. If you are using a
+recent version of RStudio, Quarto may already be available to you. In addition,
+one function in this package (`insert_pubs_web()`) uses the [Font Awesome
+Extension](https://github.com/quarto-ext/fontawesome) for Quarto - if you would
+like to use this function, you will need to install this extension to the root
+directory of your project.
+
 ## Example
 
-Here's a demonstration of the package using the bundled `example_data`:
+Here's a demonstration of `qmdcv` using the bundled `example_data`:
 
 ```{r}
 library(qmdcv)
