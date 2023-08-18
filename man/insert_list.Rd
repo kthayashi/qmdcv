@@ -8,7 +8,7 @@ insert_list(data, type = "u")
 }
 \arguments{
 \item{data}{A list of one or more lists, where each sub-list contains
-list data. See \code{data(example_data)} for an example.}
+list data. See \code{data(cvdata)} for an example.}
 
 \item{type}{Type of list to insert. Choose from among:
 \itemize{
@@ -45,8 +45,8 @@ provided. When using this function, one should ideally supply only short
 consider using \code{\link[=insert]{insert()}}.
 }
 \examples{
-data(example_data)
-teaching <- example_data$teaching
+data(cvdata)
+teaching <- cvdata$teaching
 insert_list(teaching)
 }
 \seealso{

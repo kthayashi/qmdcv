@@ -8,7 +8,7 @@ insert(data)
 }
 \arguments{
 \item{data}{A list of one or more lists, where each sub-list contains CV
-entry data. See \code{data(example_data)} for an example.}
+entry data. See \code{data(cvdata)} for an example.}
 }
 \value{
 Markdown text to be rendered with Quarto.
@@ -29,8 +29,8 @@ The following sub-list elements are recognized:
 }
 }
 \examples{
-data(example_data)
-edu <- example_data$education
+data(cvdata)
+edu <- cvdata$education
 insert(edu)
 }
 \seealso{

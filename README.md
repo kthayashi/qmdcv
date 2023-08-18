@@ -52,11 +52,11 @@ extension to the root directory of your project.
 
 ## Example
 
-Here’s a demonstration of `qmdcv` using the bundled `example_data`:
+Here’s a demonstration of `qmdcv` using the bundled `cvdata`:
 
 ``` r
 library(qmdcv)
-data(example_data, package = "qmdcv")
+data(cvdata)
 ```
 
 The family of `insert()` functions takes a list of one or more lists
@@ -64,7 +64,7 @@ containing CV data and produces Markdown text in a select few formats.
 For example, education data can be provided as:
 
 ``` r
-(edu <- example_data$education)
+(edu <- cvdata$education)
 #> [[1]]
 #> [[1]]$title
 #> [1] "Ph.D. in XXXXX"

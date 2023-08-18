@@ -60,11 +60,11 @@ directory of your project.
 
 ## Example
 
-Here's a demonstration of `qmdcv` using the bundled `example_data`:
+Here's a demonstration of `qmdcv` using the bundled `cvdata`:
 
 ```{r}
 library(qmdcv)
-data(example_data, package = "qmdcv")
+data(cvdata)
 ```
 
 The family of `insert()` functions takes a list of one or more lists containing
@@ -72,7 +72,7 @@ CV data and produces Markdown text in a select few formats. For example,
 education data can be provided as:
 
 ```{r}
-(edu <- example_data$education)
+(edu <- cvdata$education)
 ```
 
 Expected usage is to enter CV data in a YAML file, which can be read into R

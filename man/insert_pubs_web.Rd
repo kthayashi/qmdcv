@@ -8,7 +8,7 @@ insert_pubs_web(data)
 }
 \arguments{
 \item{data}{A list of one or more lists, where each sub-list contains
-publication data. See \code{data(example_data)} for an example.}
+publication data. See \code{data(cvdata)} for an example.}
 }
 \value{
 Markdown text to be rendered with Quarto.
@@ -40,8 +40,8 @@ Quarto. Make sure to install this extension to the project root directory.
 }
 \examples{
 \dontrun{
-data(example_data)
-pubs <- example_data$publications$articles
+data(cvdata)
+pubs <- cvdata$publications$articles
 insert_pubs_web(pubs)
 }
 }

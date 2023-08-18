@@ -2,7 +2,7 @@
 #' @description `insert()` converts a list of CV entry data into Quarto-style
 #' Markdown text.
 #' @param data A list of one or more lists, where each sub-list contains CV
-#' entry data. See `data(example_data)` for an example.
+#' entry data. See `data(cvdata)` for an example.
 #' @details The following sub-list elements are recognized:
 #' - `title` (string)
 #' - `start` (string)
@@ -12,8 +12,8 @@
 #' - `notes` (string or vector)
 #' @returns Markdown text to be rendered with Quarto.
 #' @examples
-#' data(example_data)
-#' edu <- example_data$education
+#' data(cvdata)
+#' edu <- cvdata$education
 #' insert(edu)
 #' @seealso [insert_pubs()], [insert_talks()], [insert_list()]
 #' @export
@@ -53,7 +53,7 @@ insert <- function(data) {
 #' Quarto-style Markdown text. This function only supports journal articles at
 #' present.
 #' @param data A list of one or more lists, where each sub-list contains
-#' publication data. See `data(example_data)` for an example.
+#' publication data. See `data(cvdata)` for an example.
 #' @details The following sub-list elements are recognized:
 #' - `authors` (string or vector)
 #' - `year` (string)
@@ -64,8 +64,8 @@ insert <- function(data) {
 #' - `doi` (string)
 #' @returns Markdown text to be rendered with Quarto.
 #' @examples
-#' data(example_data)
-#' pubs <- example_data$publications$articles
+#' data(cvdata)
+#' pubs <- cvdata$publications$articles
 #' insert_pubs(pubs)
 #' @seealso [insert_pubs_web()], [insert()], [insert_talks()], [insert_list()]
 #' @export
@@ -107,7 +107,7 @@ insert_pubs <- function(data) {
 #' formatting for web pages. This function only supports journal articles at
 #' present.
 #' @param data A list of one or more lists, where each sub-list contains
-#' publication data. See `data(example_data)` for an example.
+#' publication data. See `data(cvdata)` for an example.
 #' @details The following sub-list elements are recognized:
 #' - `authors` (string or vector)
 #' - `year` (string)
@@ -124,8 +124,8 @@ insert_pubs <- function(data) {
 #' @returns Markdown text to be rendered with Quarto.
 #' @examples
 #' \dontrun{
-#' data(example_data)
-#' pubs <- example_data$publications$articles
+#' data(cvdata)
+#' pubs <- cvdata$publications$articles
 #' insert_pubs_web(pubs)
 #' }
 #' @seealso [insert_pubs()]
@@ -175,7 +175,7 @@ insert_pubs_web <- function(data) {
 #' @description `insert_talks()` converts a list of talk/presentation data into
 #' Quarto-style Markdown text.
 #' @param data A list of one or more lists, where each sub-list contains
-#' talk/presentation data. See `data(example_data)` for an example.
+#' talk/presentation data. See `data(cvdata)` for an example.
 #' @details The following sub-list elements are recognized:
 #' - `authors` (string or vector)
 #' - `date` (string)
@@ -183,8 +183,8 @@ insert_pubs_web <- function(data) {
 #' - `context` (string)
 #' @returns Markdown text to be rendered with Quarto.
 #' @examples
-#' data(example_data)
-#' talks <- example_data$talks
+#' data(cvdata)
+#' talks <- cvdata$talks
 #' insert_talks(talks)
 #' @seealso [insert()], [insert_pubs()], [insert_list()]
 #' @export
@@ -218,7 +218,7 @@ insert_talks <- function(data) {
 #' Markdown text. Lists produced by this function can be unordered, numbered,
 #' alphabetical, or without bullets.
 #' @param data A list of one or more lists, where each sub-list contains
-#' list data. See `data(example_data)` for an example.
+#' list data. See `data(cvdata)` for an example.
 #' @param type Type of list to insert. Choose from among:
 #' - `"u"`: unordered list
 #' - `"1"`: numbered list
@@ -238,8 +238,8 @@ insert_talks <- function(data) {
 #' consider using [insert()].
 #' @returns Markdown text to be rendered with Quarto.
 #' @examples
-#' data(example_data)
-#' teaching <- example_data$teaching
+#' data(cvdata)
+#' teaching <- cvdata$teaching
 #' insert_list(teaching)
 #' @seealso [insert()], [insert_pubs()], [insert_talks()]
 #' @export

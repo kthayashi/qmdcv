@@ -8,7 +8,7 @@ insert_talks(data)
 }
 \arguments{
 \item{data}{A list of one or more lists, where each sub-list contains
-talk/presentation data. See \code{data(example_data)} for an example.}
+talk/presentation data. See \code{data(cvdata)} for an example.}
 }
 \value{
 Markdown text to be rendered with Quarto.
@@ -27,8 +27,8 @@ The following sub-list elements are recognized:
 }
 }
 \examples{
-data(example_data)
-talks <- example_data$talks
+data(cvdata)
+talks <- cvdata$talks
 insert_talks(talks)
 }
 \seealso{
