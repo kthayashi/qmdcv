@@ -15,43 +15,32 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 This package facilitates creating a curriculum vitae (CV) with
 [Quarto](https://quarto.org/). The core functionality of the package is
 to convert structured data for a CV, supplied as a YAML file and/or
-lists in R, into Markdown text. This text can be inserted into a .qmd
-file and rendered as an HTML document with Quarto.
+lists in R, into Quarto’s flavor of Markdown text. This text can be
+inserted into a .qmd document and rendered as an HTML document with
+Quarto.
 
-This package was inspired by the
-[`vitae`](https://github.com/mitchelloharawild/vitae/) and
-[`datadrivencv`](https://github.com/nstrayer/datadrivencv) packages. Go
-check them out if you are looking for a more robust, general-purpose
-package.
-
-## Disclaimers
-
-- I’m building this package primarily for my own use. Anyone is welcome
-  to use, fork, or open issues/pull requests for this package, but I may
-  not be able to implement certain changes until they become necessary
-  in my own usage.
-- This package is neither associated with nor endorsed by the Quarto
-  open source project.
+This package is intended primarily for personal use and was inspired by
+the [`vitae`](https://github.com/mitchelloharawild/vitae/) and
+[`datadrivencv`](https://github.com/nstrayer/datadrivencv) packages.
 
 ## Installation
 
-Install `qmdcv` from [GitHub](https://github.com/kthayashi/qmdcv) with:
+Install `qmdcv` from GitHub:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("kthayashi/qmdcv")
+# install.packages("remotes")
+remotes::install_github("kthayashi/qmdcv")
 ```
 
 To make use of the functionality of this package, you will need to
-install [Quarto](https://quarto.org/docs/get-started/) separately. If
-you are using a recent version of RStudio, Quarto may already be
-available to you. In addition, one function in this package
-(`insert_pubs_web()`) uses the [Font Awesome
+install Quarto separately. If you are using a recent version of RStudio,
+Quarto may already be available to you. In addition, one function in
+this package (`insert_pubs_web()`) uses the [Font Awesome
 Extension](https://github.com/quarto-ext/fontawesome) for Quarto - if
 you would like to use this function, you will need to install this
 extension to the root directory of your project.
 
-## Example
+## Usage
 
 Here’s a demonstration of `qmdcv` using the bundled `cvdata`:
 
@@ -138,8 +127,13 @@ insert(edu)
 #> ::::::
 ```
 
-Note: Use the Quarto option `output: asis` to get the produced Markdown
-text to be rendered properly.
+**Important**: Use the Quarto option `output: asis` to ensure that the
+inserted Markdown text can be rendered properly.
 
 See [here](https://github.com/kthayashi/cv) for my personal CV built
 using `qmdcv`.
+
+## Disclaimers
+
+This package is neither associated with nor endorsed by the Quarto open
+source project.

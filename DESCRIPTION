@@ -15,7 +15,7 @@ BugReports: https://github.com/kthayashi/qmdcv/issues
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
 Depends: 
     R (>= 2.10)
 Suggests: 
