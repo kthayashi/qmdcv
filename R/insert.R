@@ -21,7 +21,7 @@ insert <- function(data) {
   for (i in 1:length(data)) {
     d <- data[[i]]
     cat(paste0(
-      "::::::{.columns}\n",
+      ":::{.columns}\n",
       ":::{.column style='width:80%; text-align:left;'}\n",
       if ("title" %in% names(d)) {
         paste0("**", d$title, "**  \n")
@@ -42,7 +42,7 @@ insert <- function(data) {
         paste0(paste0(d$years, collapse = ", "), "\n")
       },
       ":::\n",
-      "::::::\n",
+      ":::\n",
       "\n"
     ))
   }
