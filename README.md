@@ -105,7 +105,7 @@ Use `insert()` to produce Markdown text from the data in `edu`:
 
 ``` r
 insert(edu)
-#> ::::::{.columns}
+#> :::{.columns}
 #> :::{.column style='width:80%; text-align:left;'}
 #> **Ph.D. in XXXXX**  
 #> University of XXXXX  
@@ -114,9 +114,9 @@ insert(edu)
 #> :::{.column style='width:20%; text-align:right;'}
 #> YYYY - YYYY
 #> :::
-#> ::::::
+#> :::
 #> 
-#> ::::::{.columns}
+#> :::{.columns}
 #> :::{.column style='width:80%; text-align:left;'}
 #> **B.S. in XXXXX**  
 #> XXXX College  
@@ -124,7 +124,7 @@ insert(edu)
 #> :::{.column style='width:20%; text-align:right;'}
 #> YYYY - YYYY
 #> :::
-#> ::::::
+#> :::
 ```
 
 **Important**: Use the Quarto option `output: asis` to ensure that the
