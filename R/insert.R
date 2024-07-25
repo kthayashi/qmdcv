@@ -87,9 +87,13 @@ insert_pubs <- function(data) {
       } else {
         " "
       },
-      paste0("*", d$publication, "*, "),
-      d$volume, ", ",
-      d$pages, ". ",
+      if (all(c("publication", "volume", "pages") %in% names(d))) {
+        paste0("*", d$publication, "*, ", d$volume, ", ", d$pages, ". ")
+      } else if (all(c("publication", "volume") %in% names(d))) {
+        paste0("*", d$publication, "*, ", d$volume, ". ")
+      } else if ("publication" %in% names(d)) {
+        paste0("*", d$publication, "*. ")
+      },
       if ("doi" %in% names(d)) {
         paste0("[https://doi.org/", d$doi, "](https://doi.org/", d$doi, ")  \n")
       } else {
