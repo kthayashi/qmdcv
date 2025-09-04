@@ -22,20 +22,20 @@ knitr::opts_chunk$set(
 
 ## Overview
 
-This package facilitates creating a curriculum vitae (CV) with [Quarto](https://quarto.org/). The core functionality of the package is to convert structured data for a CV, supplied as a YAML file and/or lists in R, into Quarto's flavor of Markdown text. This text can be inserted into a .qmd document and rendered as an HTML document with Quarto.
+`qmdcv` is an R package that facilitates creation of a curriculum vitae (CV) with [Quarto](https://quarto.org). The core functionality of the package is to convert data that comprise a CV, supplied in [YAML](https://yaml.org) format, into Quarto's flavor of [Markdown](https://quarto.org/docs/authoring/markdown-basics.html) text. This text can be inserted into a Quarto (.qmd) document and rendered to HTML.
 
-This package is intended primarily for personal use and was inspired by the [`vitae`](https://github.com/mitchelloharawild/vitae/) and [`datadrivencv`](https://github.com/nstrayer/datadrivencv) packages.
+This package is intended for personal use and was inspired by the [`datadrivencv`](https://nickstrayer.me/datadrivencv) and [`vitae`](https://pkg.mitchelloharawild.com/vitae) packages.
 
 ## Installation
 
 Install `qmdcv` from GitHub:
 
 ```{r eval=FALSE}
-# install.packages("remotes")
-remotes::install_github("kthayashi/qmdcv")
+install.packages(pak)
+pak::pkg_install("kthayashi/qmdcv")
 ```
 
-To make use of the functionality of this package, you will need to install Quarto separately. If you are using a recent version of RStudio, Quarto may already be available to you. In addition, one function in this package (`insert_pubs_web()`) uses the [Font Awesome Extension](https://github.com/quarto-ext/fontawesome) for Quarto - if you would like to use this function, you will need to install this extension to the root directory of your project.
+Users will also need to [install Quarto](https://quarto.org/docs/get-started) to make use of the functionality of this package. Recent versions of RStudio come bundled with Quarto.
 
 ## Usage
 
@@ -64,7 +64,7 @@ Use `insert()` to produce Markdown text from the data in `edu`:
 insert(edu)
 ```
 
-**Important**: Use the Quarto option `output: asis` to ensure that the inserted Markdown text can be rendered properly.
+Set `output: asis` in code chunks to ensure that the inserted Markdown text is rendered properly.
 
 See [here](https://github.com/kthayashi/cv) for my personal CV built using `qmdcv`.
 

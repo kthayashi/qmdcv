@@ -1,21 +1,22 @@
 Package: qmdcv
-Title: Create a Curriculum Vitae by inserting data into a QMD document
+Title: Create a Curriculum Vitae with YAML and Quarto
 Version: 0.1.0.9000
 Authors@R: 
     person(c("Kenji", "T."), "Hayashi", email = "kenjithayashi@gmail.com",
            role = c("aut", "cre"), comment = c(ORCID = "0000-0002-7598-1865"))
-Description: This package contains a number of utility functions for creating a
-    curriculum vitae using Quarto. The core functionality of the package is to
-    convert structured data, supplied as a YAML file and/or lists in R, into
-    Markdown (.qmd) text to be rendered with Quarto. This package is neither
-    associated with nor endorsed by the Quarto open source project.
+Description: qmdcv is an R package that facilitates creation of a curriculum
+    vitae (CV) with Quarto. The core functionality of the package is to convert
+    data that comprise a CV, supplied in YAML format, into Quarto's flavor of
+    Markdown text. This text can be inserted into a Quarto (.qmd) document and
+    rendered to HTML. This package is neither associated with nor endorsed by
+    the Quarto open source project.
 License: MIT + file LICENSE
 URL: https://github.com/kthayashi/qmdcv
 BugReports: https://github.com/kthayashi/qmdcv/issues
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 Depends: 
     R (>= 2.10)
 Suggests: 
