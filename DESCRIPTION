@@ -8,8 +8,7 @@ Description: qmdcv is an R package that facilitates creation of a curriculum
     vitae (CV) with Quarto. The core functionality of the package is to convert
     data that comprise a CV, supplied in YAML format, into Quarto's flavor of
     Markdown text. This text can be inserted into a Quarto (.qmd) document and
-    rendered to HTML. This package is neither associated with nor endorsed by
-    the Quarto open source project.
+    rendered to HTML.
 License: MIT + file LICENSE
 URL: https://github.com/kthayashi/qmdcv
 BugReports: https://github.com/kthayashi/qmdcv/issues

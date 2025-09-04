@@ -20,20 +20,16 @@ package is to convert data that comprise a CV, supplied in
 This text can be inserted into a Quarto (.qmd) document and rendered to
 HTML.
 
-This package is intended for personal use and was inspired by the
-[`datadrivencv`](https://nickstrayer.me/datadrivencv) and
-[`vitae`](https://pkg.mitchelloharawild.com/vitae) packages.
-
 ## Installation
 
-Install `qmdcv` from GitHub:
+You can install `qmdcv` from GitHub:
 
 ``` r
 install.packages(pak)
 pak::pkg_install("kthayashi/qmdcv")
 ```
 
-Users will also need to [install
+You will also need to [install
 Quarto](https://quarto.org/docs/get-started) to make use of the
 functionality of this package. Recent versions of RStudio come bundled
 with Quarto.
@@ -132,6 +128,10 @@ See [here](https://github.com/kthayashi/cv) for my personal CV built
 using `qmdcv`.
 
 ## Disclaimers
+
+This package is intended for personal use and was inspired by the
+[`datadrivencv`](https://nickstrayer.me/datadrivencv) and
+[`vitae`](https://pkg.mitchelloharawild.com/vitae) packages.
 
 This package is neither associated with nor endorsed by the Quarto open
 source project.
