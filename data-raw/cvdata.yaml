@@ -1,50 +1,18 @@
 education:
-  - title: Ph.D. in XXXXX
-    start: YYYY
-    end: YYYY
-    details:
-      - University of XXXXX
-      - "Advisor: Dr. XXXXX"
-  - title: B.S. in XXXXX
-    start: YYYY
-    end: YYYY
-    details: XXXX College
-grants:
-  - title: XXXXX
-    start: YYYY
-    end: YYYY
-    details: Details
-    notes: Notes
-  - title: XXXXX
-    start: YYYY
-    end: YYYY
-    details: Details
-    notes: Notes
+  - title: Ph.D. in Biology
+    start: 2018
+    end: 2025
+    details: University of California, Los Angeles
+    notes: 'Causes and consequences of competition in spatially variable environments for plant coexistence and distributions: a study with California annual plants'
+  - title: B.S. in Biology
+    start: 2014
+    end: 2018
+    details: Brown University
 publications:
-  articles:
-    - title: XXXXX
-      authors: "**Person 1**, Person 2"
-      year: YYYY
-      publication: Journal of XXXXX
-      volume: vol
-      pages: p-p
-      doi: xxxxx
-      data: xxxxx
-      code: xxxxx
-    - title: XXXXX
-      authors:
-        - "**Person 1**"
-        - Person 2
-        - Person 3
-        - Person 4
-        - Person 5
-      year: YYYY
-      publication: Journal of XXXXX
-      volume: vol
-      pages: p-p
-      doi: xxxxx
-      data: xxxxx
-      code: xxxxx
+  - citation: '**Hayashi, K. T.**, & Kraft, N. J. B. (2025). Competition contributes to quantitative mismatches between plant fitness and occurrence along environmental gradients. *Journal of Ecology*, 113(9), 2590–2602. <https://doi.org/10.1111/1365-2745.70115>'
+  - citation: 'McGuire, R. M.\*, **Hayashi, K. T.**\*, Yan, X.\*, Caritá Vaz, M., Cinoğlu, D., Cowen, M. C., Martínez-Blancas, A., Sullivan, L. L., Vazquez-Morales, S., & Kandlikar, G. S. (2022). EcoEvoApps: Interactive apps for theoretical models in ecology and evolutionary biology. *Ecology and Evolution*, 12(12), e9556. <https://doi.org/10.1002/ece3.9556>'
+  - citation: 'Miller, E. C., **Hayashi, K. T.**, Song, D., & Wiens, J. J. (2018). Explaining the ocean’s richest biodiversity hotspot and global patterns of fish diversity. *Proceedings of the Royal Society B: Biological Sciences*, 285(1888), 20181314. <https://doi.org/10.1098/rspb.2018.1314>'
+    notes: 'Featured in&nbsp;[The New York Times](https://www.nytimes.com/2018/10/17/science/coral-reef-biodiversity.html)'
 talks:
   - title: XXXXX
     authors: "**Person 1**"

@@ -51,30 +51,33 @@ For example, education data can be provided as:
 (edu <- cvdata$education)
 #> [[1]]
 #> [[1]]$title
-#> [1] "Ph.D. in XXXXX"
+#> [1] "Ph.D. in Biology"
 #> 
 #> [[1]]$start
-#> [1] "YYYY"
+#> [1] 2018
 #> 
 #> [[1]]$end
-#> [1] "YYYY"
+#> [1] 2025
 #> 
 #> [[1]]$details
-#> [1] "University of XXXXX" "Advisor: Dr. XXXXX" 
+#> [1] "University of California, Los Angeles"
+#> 
+#> [[1]]$notes
+#> [1] "Causes and consequences of competition in spatially variable environments for plant coexistence and distributions: a study with California annual plants"
 #> 
 #> 
 #> [[2]]
 #> [[2]]$title
-#> [1] "B.S. in XXXXX"
+#> [1] "B.S. in Biology"
 #> 
 #> [[2]]$start
-#> [1] "YYYY"
+#> [1] 2014
 #> 
 #> [[2]]$end
-#> [1] "YYYY"
+#> [1] 2018
 #> 
 #> [[2]]$details
-#> [1] "XXXX College"
+#> [1] "Brown University"
 ```
 
 Expected usage is to enter CV data in a YAML file, which can be read
@@ -83,16 +86,16 @@ Here’s what the education data above would look like in YAML format:
 
 ``` r
 cat(yaml::as.yaml(edu))
-#> - title: Ph.D. in XXXXX
-#>   start: YYYY
-#>   end: YYYY
-#>   details:
-#>   - University of XXXXX
-#>   - 'Advisor: Dr. XXXXX'
-#> - title: B.S. in XXXXX
-#>   start: YYYY
-#>   end: YYYY
-#>   details: XXXX College
+#> - title: Ph.D. in Biology
+#>   start: 2018
+#>   end: 2025
+#>   details: University of California, Los Angeles
+#>   notes: 'Causes and consequences of competition in spatially variable environments
+#>     for plant coexistence and distributions: a study with California annual plants'
+#> - title: B.S. in Biology
+#>   start: 2014
+#>   end: 2018
+#>   details: Brown University
 ```
 
 Use `insert()` to produce Markdown text from the data in `edu`:
@@ -101,22 +104,22 @@ Use `insert()` to produce Markdown text from the data in `edu`:
 insert(edu)
 #> :::{.columns}
 #> :::{.column style='width:80%; text-align:left;'}
-#> **Ph.D. in XXXXX**  
-#> University of XXXXX  
-#> Advisor: Dr. XXXXX  
+#> **Ph.D. in Biology**  
+#> University of California, Los Angeles  
+#> [Causes and consequences of competition in spatially variable environments for plant coexistence and distributions: a study with California annual plants]{style='display:flex; color:gray; font-size:0.8em; margin: 0px auto;'}
 #> :::
 #> :::{.column style='width:20%; text-align:right;'}
-#> YYYY--YYYY
+#> 2018--2025
 #> :::
 #> :::
 #> 
 #> :::{.columns}
 #> :::{.column style='width:80%; text-align:left;'}
-#> **B.S. in XXXXX**  
-#> XXXX College  
+#> **B.S. in Biology**  
+#> Brown University  
 #> :::
 #> :::{.column style='width:20%; text-align:right;'}
-#> YYYY--YYYY
+#> 2014--2018
 #> :::
 #> :::
 ```

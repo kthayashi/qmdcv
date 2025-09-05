@@ -49,6 +49,3 @@ data(cvdata)
 teaching <- cvdata$teaching
 insert_list(teaching)
 }
-\seealso{
-\code{\link[=insert]{insert()}}, \code{\link[=insert_pubs]{insert_pubs()}}, \code{\link[=insert_talks]{insert_talks()}}
-}

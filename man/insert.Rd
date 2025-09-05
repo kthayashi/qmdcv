@@ -19,7 +19,7 @@ recognized for each entry:
 }}
 }
 \value{
-Quarto-style markdown text.
+None (invisible \code{NULL}).
 }
 \description{
 Convert a list of CV entries into Quarto-style Markdown text.

@@ -31,6 +31,3 @@ data(cvdata)
 talks <- cvdata$talks
 insert_talks(talks)
 }
-\seealso{
-\code{\link[=insert]{insert()}}, \code{\link[=insert_pubs]{insert_pubs()}}, \code{\link[=insert_list]{insert_list()}}
-}
