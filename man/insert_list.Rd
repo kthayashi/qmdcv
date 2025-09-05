@@ -2,50 +2,43 @@
 % Please edit documentation in R/insert.R
 \name{insert_list}
 \alias{insert_list}
-\title{Insert a list into your CV}
+\title{Insert a list into a CV}
 \usage{
-insert_list(data, type = "u")
+insert_list(x, type = "u")
 }
 \arguments{
-\item{data}{A list of one or more lists, where each sub-list contains
-list data. See \code{data(cvdata)} for an example.}
-
-\item{type}{Type of list to insert. Choose from among:
-\itemize{
-\item \code{"u"}: unordered list
-\item \code{"1"}: numbered list
-\item \code{"a"}: alphabetical list
-\item \code{"n"}: no bullets
-}}
-}
-\value{
-Markdown text to be rendered with Quarto.
-}
-\description{
-\code{insert_list()} converts list data into Quarto-style
-Markdown text. Lists produced by this function can be unordered, numbered,
-alphabetical, or without bullets.
-}
-\details{
-The following sub-list elements are recognized:
+\item{x}{A YAML-style list of CV entries. The following elements are
+recognized for each entry:
 \itemize{
 \item \code{title} (string)
 \item \code{start} (string)
 \item \code{end} (string)
-\item \code{years} (string or vector; \code{start/end} takes precedent)
-\item \code{details} (string)
+\item \code{years} (string or vector)
 \item \code{notes} (string or vector)
+}}
+
+\item{type}{The type of list to insert. Choose from among:
+\itemize{
+\item \code{"u"}: unordered
+\item \code{"1"}: numbered
+\item \code{"a"}: alphabetical
+\item \code{"n"}: no bullets
+}}
 }
+\value{
+None (invisible \code{NULL}).
+}
+\description{
+Convert a list of CV entries into a Quarto-style Markdown list.
 }
 \note{
-This function is currently known to provide undesirable output when
-supplied \code{title} and/or \code{details} are long AND \code{start}/\code{end}/\code{years} are
-provided. When using this function, one should ideally supply only short
-\code{title} and \code{details}. If longer \code{title} and/or \code{details} are needed,
+This function can produce suboptimal results upon render when the
+supplied \code{title} and/or \code{details} are long AND dates (\code{start}, \code{end},
+\code{years}) are supplied. When using this function, it is safest to supply only
+short \code{title} and \code{details}. If longer \code{title} or \code{details} are desired,
 consider using \code{\link[=insert]{insert()}}.
 }
 \examples{
 data(cvdata)
-teaching <- cvdata$teaching
-insert_list(teaching)
+insert_list(cvdata$teaching)
 }

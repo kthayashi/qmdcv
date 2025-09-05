@@ -29,30 +29,10 @@ publications:
       fish diversity. *Proceedings of the Royal Society B: Biological Sciences*,
       285(1888), 20181314. <https://doi.org/10.1098/rspb.2018.1314>
     notes: Featured in&nbsp;[The New York Times](https://www.nytimes.com/2018/10/17/science/coral-reef-biodiversity.html)
-presentations:
-  - citation: >-
-      **Hayashi, K. T.**, & Kraft, N. J. B. (August 14, 2025). Plant
-      distributions and coexistence in spatially variable environments: insights
-      from demography and functional traits in a California annual grassland.
-      Ecological Society of America, Baltimore, MD, USA.
-  - citation: >-
-      **Hayashi, K. T.**, & Kraft, N. J. B. (August 9, 2023). Competition along
-      a water supply gradient: towards scaling competition to species
-      distributions with California annual plants. Ecological Society of
-      America, Portland, OR, USA.
 teaching:
-  - title: XXXXX
-    details: University of XXXXX
-    years:
-      - YYYY
-      - YYYY-YYYY
-  - title: XXXXX
-    details: University of XXXXX
-    years: YYYY, YYYY
-    notes: xxxxx xxxxx xxxxx xxxxx xxxxx
-  - title: XXXXX
-    details: University of XXXXX
-    start: YYYY
-    notes:
-      - xxxxx xxxxx xxxxx xxxxx xxxxx
-      - xxxxx xxxxx xxxxx xxxxx xxxxx
+  - title: Plant Ecology
+    years: "2019, 2021--2024"
+  - title: Plant Physiology
+    years: [2020, 2022]
+  - title: Plant Diversity and Evolution
+    start: 2020

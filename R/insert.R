@@ -120,71 +120,78 @@ insert_talks <- function(x) {
   insert_publications(x)
 }
 
-#' Insert a list into your CV
-#' @description `insert_list()` converts list data into Quarto-style
-#' Markdown text. Lists produced by this function can be unordered, numbered,
-#' alphabetical, or without bullets.
-#' @param data A list of one or more lists, where each sub-list contains
-#' list data. See `data(cvdata)` for an example.
-#' @param type Type of list to insert. Choose from among:
-#' - `"u"`: unordered list
-#' - `"1"`: numbered list
-#' - `"a"`: alphabetical list
+#' Insert a list into a CV
+#'
+#' Convert a list of CV entries into a Quarto-style Markdown list.
+#'
+#' @param x A YAML-style list of CV entries. The following elements are
+#' recognized for each entry:
+#' * `title` (string)
+#' * `start` (string)
+#' * `end` (string)
+#' * `years` (string or vector)
+#' * `notes` (string or vector)
+#' @param type The type of list to insert. Choose from among:
+#' - `"u"`: unordered
+#' - `"1"`: numbered
+#' - `"a"`: alphabetical
 #' - `"n"`: no bullets
-#' @details The following sub-list elements are recognized:
-#' - `title` (string)
-#' - `start` (string)
-#' - `end` (string)
-#' - `years` (string or vector; `start/end` takes precedent)
-#' - `details` (string)
-#' - `notes` (string or vector)
-#' @note This function is currently known to provide undesirable output when
-#' supplied `title` and/or `details` are long AND `start`/`end`/`years` are
-#' provided. When using this function, one should ideally supply only short
-#' `title` and `details`. If longer `title` and/or `details` are needed,
+#'
+#' @note This function can produce suboptimal results upon render when the
+#' supplied `title` and/or `details` are long AND dates (`start`, `end`,
+#' `years`) are supplied. When using this function, it is safest to supply only
+#' short `title` and `details`. If longer `title` or `details` are desired,
 #' consider using [insert()].
-#' @returns Markdown text to be rendered with Quarto.
+#'
+#' @returns None (invisible `NULL`).
+#' @export
+#'
 #' @examples
 #' data(cvdata)
-#' teaching <- cvdata$teaching
-#' insert_list(teaching)
-#' @export
-insert_list <- function(data, type = "u") {
-  for (i in 1:length(data)) {
-    d <- data[[i]]
+#' insert_list(cvdata$teaching)
+insert_list <- function(x, type = "u") {
+  stopifnot(
+    length(type) == 1,
+    type %in% c("u", "1", "a", "n")
+  )
+  for (i in 1:length(x)) {
+    d <- x[[i]]
     if (type == c("u")) {
       spaces <- "  "
     } else if (type %in% c("1", "a")) {
       spaces <- "   "
     } else if (type == "n") {
       spaces <- ""
-    } else {
-      stop('Choose list type from among "u", "1", "a", or "n"')
     }
-    cat(paste0(
-      if (type == "u") {
-        "* "
-      } else if (type == "1") {
-        "1. "
-      } else if (type == "a") {
-        "a. "
-      },
-      d$title,
-      if ("details" %in% names(d)) {
-        paste0(", ", d$details)
-      },
-      if (all(c("start", "end") %in% names(d))) {
-        paste0(" [", d$start, " - ", d$end, "]{style='float:right;'}  \n")
-      } else if ("start" %in% names(d)) {
-        paste0(" [", d$start, "]{style='float:right;'}  \n")
-      } else if ("years" %in% names(d)) {
-        paste0(" [", paste0(d$years, collapse = ", "), "]{style='float:right;'}  \n")
-      } else {
-        "  \n"
-      },
-      if ("notes" %in% names(d)) {
-        paste0(spaces, "[", d$notes, "]{style='display:flex; color:gray; font-size:0.8em; margin: 0px 20% 0px auto;'}\n", collapse = "")
-      }
-    ))
+    cat(
+      paste0(
+        if (type == "u") {
+          "* "
+        } else if (type == "1") {
+          "1. "
+        } else if (type == "a") {
+          "a. "
+        },
+        d$title,
+        if (all(c("start", "end") %in% names(d))) {
+          paste0(" [", d$start, "--", d$end, "]{style='float:right;'}  \n")
+        } else if ("start" %in% names(d)) {
+          paste0(" [", d$start, "]{style='float:right;'}  \n")
+        } else if ("years" %in% names(d)) {
+          paste0(" [", paste0(d$years, collapse = ", "), "]{style='float:right;'}  \n")
+        } else {
+          "  \n"
+        },
+        if ("notes" %in% names(d)) {
+          paste0(
+            spaces,
+            "[",
+            d$notes,
+            "]{style='display:flex; color:gray; font-size:0.8em; margin: 0px 20% 0px auto;'}\n",
+            collapse = ""
+          )
+        }
+      )
+    )
   }
 }
