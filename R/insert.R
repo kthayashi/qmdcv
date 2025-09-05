@@ -55,71 +55,6 @@ insert <- function(x) {
   }
 }
 
-#' Insert publications into a CV
-#'
-#' Convert a list of publications into a Quarto-style Markdown list. Several
-#' alias functions are provided for other item types.
-#'
-#' @param x A YAML-style list of publications etc. The following elements are
-#' recognized for each item:
-#' - `citation` (string)
-#' - `notes` (string or vector)
-#'
-#' @returns None (invisible `NULL`).
-#' @export
-#'
-#' @examples
-#' data(cvdata)
-#' insert_publications(cvdata$publications)
-insert_publications <- function(x) {
-  for (i in 1:length(x)) {
-    d <- x[[i]]
-    cat(
-      paste0(
-        ":::{}\n",
-        rev(1:length(x))[i], ". ",
-        if ("citation" %in% names(d)) {
-          paste0(d$citation, "  \n")
-        },
-        if ("notes" %in% names(d)) {
-          paste0(
-            "[",
-            d$notes,
-            "]{style='display:flex; color:gray; font-size:0.8em; margin: 0px auto;'}\n",
-            collapse = ""
-          )
-        },
-        ":::\n",
-        "\n"
-      )
-    )
-  }
-}
-
-#' @rdname insert_publications
-#' @export
-insert_code <- function(x) {
-  insert_publications(x)
-}
-
-#' @rdname insert_publications
-#' @export
-insert_data <- function(x) {
-  insert_publications(x)
-}
-
-#' @rdname insert_publications
-#' @export
-insert_presentations <- function(x) {
-  insert_publications(x)
-}
-
-#' @rdname insert_publications
-#' @export
-insert_talks <- function(x) {
-  insert_publications(x)
-}
-
 #' Insert a list into a CV
 #'
 #' Convert a list of CV entries into a Quarto-style Markdown list.
@@ -194,4 +129,69 @@ insert_list <- function(x, type = "u") {
       )
     )
   }
+}
+
+#' Insert publications into a CV
+#'
+#' Convert a list of publications into a Quarto-style Markdown list. Several
+#' alias functions are provided for other item types.
+#'
+#' @param x A YAML-style list of publications etc. The following elements are
+#' recognized for each item:
+#' - `citation` (string)
+#' - `notes` (string or vector)
+#'
+#' @returns None (invisible `NULL`).
+#' @export
+#'
+#' @examples
+#' data(cvdata)
+#' insert_publications(cvdata$publications)
+insert_publications <- function(x) {
+  for (i in 1:length(x)) {
+    d <- x[[i]]
+    cat(
+      paste0(
+        ":::{}\n",
+        rev(1:length(x))[i], ". ",
+        if ("citation" %in% names(d)) {
+          paste0(d$citation, "  \n")
+        },
+        if ("notes" %in% names(d)) {
+          paste0(
+            "[",
+            d$notes,
+            "]{style='display:flex; color:gray; font-size:0.8em; margin: 0px auto;'}\n",
+            collapse = ""
+          )
+        },
+        ":::\n",
+        "\n"
+      )
+    )
+  }
+}
+
+#' @rdname insert_publications
+#' @export
+insert_code <- function(x) {
+  insert_publications(x)
+}
+
+#' @rdname insert_publications
+#' @export
+insert_data <- function(x) {
+  insert_publications(x)
+}
+
+#' @rdname insert_publications
+#' @export
+insert_presentations <- function(x) {
+  insert_publications(x)
+}
+
+#' @rdname insert_publications
+#' @export
+insert_talks <- function(x) {
+  insert_publications(x)
 }
