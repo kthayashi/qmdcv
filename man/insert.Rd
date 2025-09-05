@@ -4,35 +4,27 @@
 \alias{insert}
 \title{Insert entries into your CV}
 \usage{
-insert(data)
+insert(x)
 }
 \arguments{
-\item{data}{A list of one or more lists, where each sub-list contains CV
-entry data. See \code{data(cvdata)} for an example.}
-}
-\value{
-Markdown text to be rendered with Quarto.
-}
-\description{
-\code{insert()} converts a list of CV entry data into Quarto-style
-Markdown text.
-}
-\details{
-The following sub-list elements are recognized:
+\item{x}{A YAML-style list of CV entries. The following elements are
+recognized for each entry:
 \itemize{
 \item \code{title} (string)
 \item \code{start} (string)
 \item \code{end} (string)
-\item \code{years} (string or vector; \code{start/end} takes precedent)
+\item \code{years} (string or vector)
 \item \code{details} (string or vector)
 \item \code{notes} (string or vector)
+}}
 }
+\value{
+Quarto-style markdown text.
+}
+\description{
+Convert a list of CV entries into Quarto-style Markdown text.
 }
 \examples{
 data(cvdata)
-edu <- cvdata$education
-insert(edu)
-}
-\seealso{
-\code{\link[=insert_pubs]{insert_pubs()}}, \code{\link[=insert_talks]{insert_talks()}}, \code{\link[=insert_list]{insert_list()}}
+insert(cvdata$education)
 }

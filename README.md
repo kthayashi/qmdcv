@@ -106,7 +106,7 @@ insert(edu)
 #> Advisor: Dr. XXXXX  
 #> :::
 #> :::{.column style='width:20%; text-align:right;'}
-#> YYYY - YYYY
+#> YYYY--YYYY
 #> :::
 #> :::
 #> 
@@ -116,7 +116,7 @@ insert(edu)
 #> XXXX College  
 #> :::
 #> :::{.column style='width:20%; text-align:right;'}
-#> YYYY - YYYY
+#> YYYY--YYYY
 #> :::
 #> :::
 ```

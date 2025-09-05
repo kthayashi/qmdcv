@@ -1,25 +1,25 @@
 #' Insert entries into your CV
-#' @description `insert()` converts a list of CV entry data into Quarto-style
-#' Markdown text.
-#' @param data A list of one or more lists, where each sub-list contains CV
-#' entry data. See `data(cvdata)` for an example.
-#' @details The following sub-list elements are recognized:
-#' - `title` (string)
-#' - `start` (string)
-#' - `end` (string)
-#' - `years` (string or vector; `start/end` takes precedent)
-#' - `details` (string or vector)
-#' - `notes` (string or vector)
-#' @returns Markdown text to be rendered with Quarto.
+#'
+#' Convert a list of CV entries into Quarto-style Markdown text.
+#'
+#' @param x A YAML-style list of CV entries. The following elements are
+#' recognized for each entry:
+#' * `title` (string)
+#' * `start` (string)
+#' * `end` (string)
+#' * `years` (string or vector)
+#' * `details` (string or vector)
+#' * `notes` (string or vector)
+#'
+#' @returns Quarto-style markdown text.
+#' @export
+#'
 #' @examples
 #' data(cvdata)
-#' edu <- cvdata$education
-#' insert(edu)
-#' @seealso [insert_pubs()], [insert_talks()], [insert_list()]
-#' @export
-insert <- function(data) {
-  for (i in 1:length(data)) {
-    d <- data[[i]]
+#' insert(cvdata$education)
+insert <- function(x) {
+  for (i in 1:length(x)) {
+    d <- x[[i]]
     cat(paste0(
       ":::{.columns}\n",
       ":::{.column style='width:80%; text-align:left;'}\n",
@@ -30,12 +30,17 @@ insert <- function(data) {
         paste0(d$details, "  \n", collapse = "")
       },
       if ("notes" %in% names(d)) {
-        paste0("[", d$notes, "]{style='display:flex; color:gray; font-size:0.8em; margin: 0px auto;'}\n", collapse = "")
+        paste0(
+          "[",
+          d$notes,
+          "]{style='display:flex; color:gray; font-size:0.8em; margin: 0px auto;'}\n",
+          collapse = ""
+        )
       },
       ":::\n",
       ":::{.column style='width:20%; text-align:right;'}\n",
       if (all(c("start", "end") %in% names(d))) {
-        paste0(d$start, " - ", d$end, "\n")
+        paste0(d$start, "--", d$end, "\n")
       } else if ("start" %in% names(d)) {
         paste0(d$start, "\n")
       } else if ("years" %in% names(d)) {
