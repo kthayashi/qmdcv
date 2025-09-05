@@ -2,12 +2,24 @@
 % Please edit documentation in R/insert.R
 \name{insert_publications}
 \alias{insert_publications}
-\title{Insert publications into your CV}
+\alias{insert_code}
+\alias{insert_data}
+\alias{insert_presentations}
+\alias{insert_talks}
+\title{Insert publications into a CV}
 \usage{
 insert_publications(x)
+
+insert_code(x)
+
+insert_data(x)
+
+insert_presentations(x)
+
+insert_talks(x)
 }
 \arguments{
-\item{x}{A YAML-style list of publications. The following elements are
+\item{x}{A YAML-style list of publications etc. The following elements are
 recognized for each item:
 \itemize{
 \item \code{citation} (string)
@@ -18,7 +30,8 @@ recognized for each item:
 None (invisible \code{NULL}).
 }
 \description{
-Convert a list of publications into a Quarto-style Markdown list.
+Convert a list of publications into a Quarto-style Markdown list. Several
+alias functions are provided for other item types.
 }
 \examples{
 data(cvdata)

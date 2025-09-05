@@ -1,4 +1,4 @@
-#' Insert entries into your CV
+#' Insert entries into a CV
 #'
 #' Convert a list of CV entries into Quarto-style Markdown text.
 #'
@@ -55,11 +55,12 @@ insert <- function(x) {
   }
 }
 
-#' Insert publications into your CV
+#' Insert publications into a CV
 #'
-#' Convert a list of publications into a Quarto-style Markdown list.
+#' Convert a list of publications into a Quarto-style Markdown list. Several
+#' alias functions are provided for other item types.
 #'
-#' @param x A YAML-style list of publications. The following elements are
+#' @param x A YAML-style list of publications etc. The following elements are
 #' recognized for each item:
 #' - `citation` (string)
 #' - `notes` (string or vector)
@@ -95,45 +96,28 @@ insert_publications <- function(x) {
   }
 }
 
-#' Insert talks/presentations into your CV
-#' @description `insert_talks()` converts a list of talk/presentation data into
-#' Quarto-style Markdown text.
-#' @param data A list of one or more lists, where each sub-list contains
-#' talk/presentation data. See `data(cvdata)` for an example.
-#' @details The following sub-list elements are recognized:
-#' - `authors` (string or vector)
-#' - `date` (string)
-#' - `title` (string)
-#' - `context` (string)
-#' @returns Markdown text to be rendered with Quarto.
-#' @examples
-#' data(cvdata)
-#' talks <- cvdata$talks
-#' insert_talks(talks)
+#' @rdname insert_publications
 #' @export
-insert_talks <- function(data) {
-  for (i in 1:length(data)) {
-    d <- data[[i]]
-    cat(paste0(
-      ":::{}\n",
-      rev(1:length(data))[i], ". ",
-      if (length(d$authors) > 1) {
-        paste0(paste0(d$authors, collapse = ", "), ". ")
-      } else {
-        paste0(d$authors, ". ")
-      },
-      paste0("(", d$date, "). "),
-      d$title,
-      if (!substr(d$title, nchar(d$title), nchar(d$title)) %in% c("?", "!")) {
-        ". "
-      } else {
-        " "
-      },
-      d$context, ".\n",
-      ":::\n",
-      "\n"
-    ))
-  }
+insert_code <- function(x) {
+  insert_publications(x)
+}
+
+#' @rdname insert_publications
+#' @export
+insert_data <- function(x) {
+  insert_publications(x)
+}
+
+#' @rdname insert_publications
+#' @export
+insert_presentations <- function(x) {
+  insert_publications(x)
+}
+
+#' @rdname insert_publications
+#' @export
+insert_talks <- function(x) {
+  insert_publications(x)
 }
 
 #' Insert a list into your CV

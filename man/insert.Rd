@@ -2,7 +2,7 @@
 % Please edit documentation in R/insert.R
 \name{insert}
 \alias{insert}
-\title{Insert entries into your CV}
+\title{Insert entries into a CV}
 \usage{
 insert(x)
 }
