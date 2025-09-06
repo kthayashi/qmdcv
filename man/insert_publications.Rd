@@ -34,6 +34,6 @@ Convert a list of publications into a Quarto-style Markdown list. Several
 alias functions are provided for other item types.
 }
 \examples{
-data(cvdata)
+cvdata <- read_example()
 insert_publications(cvdata$publications)
 }

@@ -39,6 +39,6 @@ short \code{title} and \code{details}. If longer \code{title} or \code{details} 
 consider using \code{\link[=insert]{insert()}}.
 }
 \examples{
-data(cvdata)
+cvdata <- read_example()
 insert_list(cvdata$teaching)
 }

@@ -36,72 +36,69 @@ with Quarto.
 
 ## Usage
 
-Here’s a demonstration of `qmdcv` using the bundled `cvdata`:
-
 ``` r
 library(qmdcv)
-data(cvdata)
 ```
 
-The family of `insert()` functions takes a list of one or more lists
-containing CV data and produces Markdown text in a select few formats.
-For example, education data can be provided as:
+`qmdcv` provides a YAML file containing example CV data:
 
 ``` r
-(edu <- cvdata$education)
-#> [[1]]
-#> [[1]]$title
-#> [1] "Ph.D. in Biology"
-#> 
-#> [[1]]$start
-#> [1] 2018
-#> 
-#> [[1]]$end
-#> [1] 2025
-#> 
-#> [[1]]$details
-#> [1] "University of California, Los Angeles"
-#> 
-#> [[1]]$notes
-#> [1] "Causes and consequences of competition in spatially variable environments for plant coexistence and distributions: a study with California annual plants"
-#> 
-#> 
-#> [[2]]
-#> [[2]]$title
-#> [1] "B.S. in Biology"
-#> 
-#> [[2]]$start
-#> [1] 2014
-#> 
-#> [[2]]$end
-#> [1] 2018
-#> 
-#> [[2]]$details
-#> [1] "Brown University"
+write_example()
+#> education:
+#>   - title: Ph.D. in Biology
+#>     start: 2018
+#>     end: 2025
+#>     details: University of California, Los Angeles
+#>     notes: >-
+#>       Causes and consequences of competition in spatially variable environments
+#>       for plant coexistence and distributions: a study with California annual
+#>       plants
+#>   - title: B.S. in Biology
+#>     start: 2014
+#>     end: 2018
+#>     details: Brown University
+#> publications:
+#>   - citation: >-
+#>       **Hayashi, K. T.**, & Kraft, N. J. B. (2025). Competition contributes to
+#>       quantitative mismatches between plant fitness and occurrence along
+#>       environmental gradients. *Journal of Ecology*, 113(9), 2590–2602.
+#>       <https://doi.org/10.1111/1365-2745.70115>
+#>   - citation: >-
+#>       McGuire, R. M.\*, **Hayashi, K. T.**\*, Yan, X.\*, Caritá Vaz, M.,
+#>       Cinoğlu, D., Cowen, M. C., Martínez-Blancas, A., Sullivan, L. L.,
+#>       Vazquez-Morales, S., & Kandlikar, G. S. (2022). EcoEvoApps: Interactive
+#>       apps for theoretical models in ecology and evolutionary biology. *Ecology
+#>       and Evolution*, 12(12), e9556. <https://doi.org/10.1002/ece3.9556>
+#>   - citation: >-
+#>       Miller, E. C., **Hayashi, K. T.**, Song, D., & Wiens, J. J. (2018).
+#>       Explaining the ocean’s richest biodiversity hotspot and global patterns of
+#>       fish diversity. *Proceedings of the Royal Society B: Biological Sciences*,
+#>       285(1888), 20181314. <https://doi.org/10.1098/rspb.2018.1314>
+#>     notes: 'Featured in&nbsp;[The New York Times](https://www.nytimes.com/2018/10/17/science/coral-reef-biodiversity.html)'
+#> teaching:
+#>   - title: Plant Ecology
+#>     years: '2019, 2021--2024'
+#>   - title: Plant Physiology
+#>     years: [2020, 2022]
+#>   - title: Plant Diversity and Evolution
+#>     start: 2020
 ```
 
-Expected usage is to enter CV data in a YAML file, which can be read
-into R using the [`yaml`](https://github.com/vubiostat/r-yaml/) package.
-Here’s what the education data above would look like in YAML format:
+We can read this YAML file into R as a list:
 
 ``` r
-cat(yaml::as.yaml(edu))
-#> - title: Ph.D. in Biology
-#>   start: 2018
-#>   end: 2025
-#>   details: University of California, Los Angeles
-#>   notes: 'Causes and consequences of competition in spatially variable environments
-#>     for plant coexistence and distributions: a study with California annual plants'
-#> - title: B.S. in Biology
-#>   start: 2014
-#>   end: 2018
-#>   details: Brown University
+cvdata <- read_example()
 ```
 
-Use `insert()` to produce Markdown text from the data in `edu`:
+Use `read_yaml()` from the [`yaml`](https://github.com/vubiostat/r-yaml)
+package to read your own CV data into R.
+
+The family of `insert()` functions converts a list of CV data into
+Markdown text in a number of pre-defined formats. For example, we can
+insert education history into a CV with:
 
 ``` r
-insert(edu)
+insert(cvdata$education)
 #> :::{.columns}
 #> :::{.column style='width:80%; text-align:left;'}
 #> **Ph.D. in Biology**  
@@ -124,8 +121,8 @@ insert(edu)
 #> :::
 ```
 
-Set `output: asis` in code chunks to ensure that the inserted Markdown
-text is rendered properly.
+Set `output: asis` (or `results: asis` for `knitr`) in code chunks to
+ensure that this Markdown text is treated as such upon render.
 
 See [here](https://github.com/kthayashi/cv) for my personal CV built
 using `qmdcv`.

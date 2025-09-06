@@ -15,7 +15,7 @@
 #' @export
 #'
 #' @examples
-#' data(cvdata)
+#' cvdata <- read_example()
 #' insert(cvdata$education)
 insert <- function(x) {
   for (i in 1:length(x)) {
@@ -82,7 +82,7 @@ insert <- function(x) {
 #' @export
 #'
 #' @examples
-#' data(cvdata)
+#' cvdata <- read_example()
 #' insert_list(cvdata$teaching)
 insert_list <- function(x, type = "u") {
   stopifnot(
@@ -145,7 +145,7 @@ insert_list <- function(x, type = "u") {
 #' @export
 #'
 #' @examples
-#' data(cvdata)
+#' cvdata <- read_example()
 #' insert_publications(cvdata$publications)
 insert_publications <- function(x) {
   for (i in 1:length(x)) {

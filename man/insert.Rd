@@ -25,6 +25,6 @@ None (invisible \code{NULL}).
 Convert a list of CV entries into Quarto-style Markdown text.
 }
 \examples{
-data(cvdata)
+cvdata <- read_example()
 insert(cvdata$education)
 }
