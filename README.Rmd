@@ -73,6 +73,6 @@ You can get started by using `write_example()` to make a copy of the example YAM
 
 ## Disclaimers
 
-This package is intended for personal use and was inspired by the [`datadrivencv`](https://nickstrayer.me/datadrivencv) and [`vitae`](https://pkg.mitchelloharawild.com/vitae) packages.
+This package was inspired by the [`datadrivencv`](https://nickstrayer.me/datadrivencv) and [`vitae`](https://pkg.mitchelloharawild.com/vitae) packages and is intended for personal use.
 
 This package is neither associated with nor endorsed by the Quarto open source project.

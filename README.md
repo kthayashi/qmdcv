@@ -136,9 +136,10 @@ example YAML file as a template for entering your own CV data. See
 
 ## Disclaimers
 
-This package is intended for personal use and was inspired by the
+This package was inspired by the
 [`datadrivencv`](https://nickstrayer.me/datadrivencv) and
-[`vitae`](https://pkg.mitchelloharawild.com/vitae) packages.
+[`vitae`](https://pkg.mitchelloharawild.com/vitae) packages and is
+intended for personal use.
 
 This package is neither associated with nor endorsed by the Quarto open
 source project.
