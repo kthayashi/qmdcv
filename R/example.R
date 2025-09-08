@@ -12,8 +12,8 @@ read_example <- function(...) {
 
 #' Write example CV data
 #'
-#' @param to Path to a single destination file or directory. "" indicates output
-#' to the console.
+#' @param to Path to a single destination file or directory. `""`
+#' indicates output to the console.
 #' @param ... Potential arguments passed to [file.copy()].
 #'
 #' @returns

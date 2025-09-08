@@ -7,8 +7,8 @@
 write_example(to = "", ...)
 }
 \arguments{
-\item{to}{Path to a single destination file or directory. "" indicates output
-to the console.}
+\item{to}{Path to a single destination file or directory. \code{""}
+indicates output to the console.}
 
 \item{...}{Potential arguments passed to \code{\link[=file.copy]{file.copy()}}.}
 }
