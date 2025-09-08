@@ -22,52 +22,57 @@ knitr::opts_chunk$set(
 
 ## Overview
 
-This package facilitates creating a curriculum vitae (CV) with [Quarto](https://quarto.org/). The core functionality of the package is to convert structured data for a CV, supplied as a YAML file and/or lists in R, into Quarto's flavor of Markdown text. This text can be inserted into a .qmd document and rendered as an HTML document with Quarto.
-
-This package is intended primarily for personal use and was inspired by the [`vitae`](https://github.com/mitchelloharawild/vitae/) and [`datadrivencv`](https://github.com/nstrayer/datadrivencv) packages.
+`qmdcv` is an R package that facilitates creation of a curriculum vitae (CV) with [Quarto](https://quarto.org). The core functionality of the package is to convert data that comprise a CV, supplied in [YAML](https://yaml.org) format, into Quarto's flavor of [Markdown](https://quarto.org/docs/authoring/markdown-basics.html) text. This text can be inserted into a Quarto (.qmd) document and rendered to HTML.
 
 ## Installation
 
-Install `qmdcv` from GitHub:
+You can install `qmdcv` from GitHub:
 
 ```{r eval=FALSE}
-# install.packages("remotes")
-remotes::install_github("kthayashi/qmdcv")
+install.packages("pak")
+pak::pkg_install("kthayashi/qmdcv")
 ```
 
-To make use of the functionality of this package, you will need to install Quarto separately. If you are using a recent version of RStudio, Quarto may already be available to you. In addition, one function in this package (`insert_pubs_web()`) uses the [Font Awesome Extension](https://github.com/quarto-ext/fontawesome) for Quarto - if you would like to use this function, you will need to install this extension to the root directory of your project.
+You will also need to [install Quarto](https://quarto.org/docs/get-started) to make use of the functionality of this package. Recent versions of RStudio come bundled with Quarto.
 
 ## Usage
 
-Here's a demonstration of `qmdcv` using the bundled `cvdata`:
-
 ```{r}
 library(qmdcv)
-data(cvdata)
 ```
 
-The family of `insert()` functions takes a list of one or more lists containing CV data and produces Markdown text in a select few formats. For example, education data can be provided as:
+`qmdcv` provides a YAML file containing example CV data:
 
 ```{r}
-(edu <- cvdata$education)
+write_example()
 ```
 
-Expected usage is to enter CV data in a YAML file, which can be read into R using the [`yaml`](https://github.com/vubiostat/r-yaml/) package. Here's what the education data above would look like in YAML format:
+We can read this YAML file into R as a list:
 
 ```{r}
-cat(yaml::as.yaml(edu))
+cvdata <- read_example()
 ```
 
-Use `insert()` to produce Markdown text from the data in `edu`:
+Or equivalently:
+
+```{r eval=FALSE}
+cvdata <- yaml::read_yaml(file = system.file("example.yaml", package = "qmdcv"))
+```
+
+where `file` can be replaced with the path to your own CV data.
+
+The family of `insert()` functions converts a list of CV data into Markdown text in a number of pre-defined formats. For example, we can insert education history into a CV with:
 
 ```{r}
-insert(edu)
+insert(cvdata$education)
 ```
 
-**Important**: Use the Quarto option `output: asis` to ensure that the inserted Markdown text can be rendered properly.
+⚠️ Set `output: asis` (or `results: asis` for `knitr`) in code chunks to ensure that this Markdown text is treated as such upon render.
 
-See [here](https://github.com/kthayashi/cv) for my personal CV built using `qmdcv`.
+You can get started by using `write_example()` to make a copy of the example YAML file as a template for entering your own CV data. See [here](https://github.com/kthayashi/cv) for my personal CV built using `qmdcv`.
 
 ## Disclaimers
+
+This package was inspired by the [`datadrivencv`](https://nickstrayer.me/datadrivencv) and [`vitae`](https://pkg.mitchelloharawild.com/vitae) packages and is intended for personal use.
 
 This package is neither associated with nor endorsed by the Quarto open source project.
