@@ -6,7 +6,7 @@ output: github_document
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
-  collapse = TRUE,
+  collapse = FALSE,
   comment = "#>",
   fig.path = "man/figures/README-",
   out.width = "100%"
@@ -53,15 +53,15 @@ We can read this YAML file into R as a list:
 cvdata <- read_example()
 ```
 
-Use `read_yaml()` from the [`yaml`](https://github.com/vubiostat/r-yaml) package to read your own CV data into R.
-
 The family of `insert()` functions converts a list of CV data into Markdown text in a number of pre-defined formats. For example, we can insert education history into a CV with:
 
 ```{r}
 insert(cvdata$education)
 ```
 
-Set `output: asis` (or `results: asis` for `knitr`) in code chunks to ensure that this Markdown text is treated as such upon render.
+⚠️ Set `output: asis` (or `results: asis` for `knitr`) in code chunks to ensure that this Markdown text is treated as such upon render.
+
+You can get started by using `write_example()` to copy the example YAML file to your machine. Use this file as a template to enter your own CV data, then use `read_yaml()` from the [`yaml`](https://github.com/vubiostat/r-yaml) package to read these data into R.
 
 See [here](https://github.com/kthayashi/cv) for my personal CV built using `qmdcv`.
 
