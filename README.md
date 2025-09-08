@@ -25,7 +25,7 @@ HTML.
 You can install `qmdcv` from GitHub:
 
 ``` r
-install.packages(pak)
+install.packages("pak")
 pak::pkg_install("kthayashi/qmdcv")
 ```
 
