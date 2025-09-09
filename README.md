@@ -126,8 +126,9 @@ insert(cvdata$education)
 #> :::
 ```
 
-⚠️ Set `output: asis` (or `results: asis` for `knitr`) in code chunks to
-ensure that this Markdown text is treated as such upon render.
+⚠️ Set the execution option `output: asis` (or `knitr` option
+`results: asis`) for code chunks to ensure that this Markdown text is
+treated as such upon render.
 
 You can get started by using `write_example()` to make a copy of the
 example YAML file as a template for entering your own CV data. See
